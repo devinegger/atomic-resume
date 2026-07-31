@@ -1,0 +1,60 @@
+# ---------------------------------------------------------------
+# Your career data never gets committed.
+#
+# Everything you put in _inbox/, profile/, applications/, and
+# output/ stays on your machine. The folders themselves are
+# tracked (so the structure survives a clone) but their contents
+# are not.
+#
+# If you fork this repo to share improvements, your resume,
+# your atoms, and your applications do not come with it.
+# ---------------------------------------------------------------
+
+_inbox/*
+!_inbox/.gitkeep
+!_inbox/README.md
+
+profile/*
+!profile/.gitkeep
+!profile/README.md
+
+applications/*
+!applications/.gitkeep
+!applications/README.md
+
+output/*
+!output/.gitkeep
+!output/README.md
+
+# Templates you create or adopt are yours — the four that ship
+# with the repo are tracked, anything else you add is not.
+templates/*
+!templates/README.md
+!templates/resume-base.md
+!templates/resume-expanded.md
+!templates/cover-letter-base.md
+!templates/cover-letter-expanded.md
+
+# ---------------------------------------------------------------
+# Maintainer-only files. Not part of the shared repo.
+# ---------------------------------------------------------------
+
+scrub-terms.txt
+EXTRACTION-PLAN.md
+
+# ---------------------------------------------------------------
+# OS, editor, and agent noise
+# ---------------------------------------------------------------
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+.obsidian/
+.vscode/
+.idea/
+*.swp
+*~
+
+.claude/settings.local.json
+.claude/local/
