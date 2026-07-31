@@ -22,17 +22,17 @@ rules:
 
 Dear {{NAME or TEAM}},
 
-{{OPENING — two or three sentences. Name the role and the specific reason you're applying to this one. Something that could not be copied into a letter for a different company.}}
+{{PLACEHOLDER — two to three sentences. Name the role and state the specific reason you are applying to this posting — not a reason that could apply to any employer. Replace entirely.}}
 
-{{FIRST EVIDENCE — five or six sentences. Your strongest relevant accomplishment, told as a story: what the situation was, what you decided, what you did, what changed. Include the detail that makes it real.}}
+{{PLACEHOLDER — five to six sentences. Describe your strongest relevant accomplishment: the situation, what you decided, what you did, what changed. Include one concrete detail. Replace entirely.}}
 
-{{SECOND EVIDENCE — four or five sentences. A different capability, chosen to cover a different requirement in the posting. Don't repeat the shape of the first paragraph.}}
+{{PLACEHOLDER — four to five sentences. Describe a second, different accomplishment covering a different requirement than the first. Do not repeat the sentence structure used above. Replace entirely.}}
 
-{{THE HARD THING — three to five sentences. The pivot, the gap, the industry change, the credential you don't have. State it plainly, explain what's actually true about it, and say what you bring that compensates. Confidence without defensiveness. Delete this paragraph if there's genuinely nothing to address.}}
+{{PLACEHOLDER — three to five sentences, or delete this paragraph if not applicable. State the pivot, gap, industry change, or missing credential directly. State what you offer instead. No defensive or apologetic language. Replace entirely, or remove the paragraph.}}
 
-{{FIT — three or four sentences. What you understand about what this team is trying to do, and where you'd be useful in it. Specific to the posting, not generic praise of the organization.}}
+{{PLACEHOLDER — three to four sentences. State what you understand about this team's actual work, specific to this posting — not general praise of the company. Replace entirely.}}
 
-{{CLOSE — two or three sentences. What you'd want to discuss, your availability if relevant, and thanks.}}
+{{PLACEHOLDER — two to three sentences. State what you want to discuss next, your availability if relevant, and thanks. Replace entirely.}}
 
 Sincerely,
 {{FULL NAME}}

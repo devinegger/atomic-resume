@@ -19,7 +19,7 @@ rules:
 
 ## Summary
 
-{{TWO OR THREE SENTENCES: what you do, the scope you do it at, and the kind of problem you're good at. Written for this specific posting.}}
+{{PLACEHOLDER — two to three sentences. State what you do, the scope you operate at, and the kind of problem you are good at. Specific to this posting. Replace entirely, or delete this section.}}
 
 <!-- Optional. Keep it if it frames something the experience section can't say on its own — a pivot, a breadth of scope, a specialty. Delete it if it's filler. -->
 
@@ -35,7 +35,7 @@ rules:
 ### {{JOB TITLE}} — {{ORGANIZATION}}
 {{MONTH YEAR}} – {{MONTH YEAR or Present}} · {{CITY, STATE or Remote}}
 
-- {{ACCOMPLISHMENT: what you did, how, and what changed as a result}}
+- {{PLACEHOLDER — one accomplishment: what you did, how, and what changed as a result. Replace entirely.}}
 - {{ACCOMPLISHMENT}}
 - {{ACCOMPLISHMENT}}
 <!-- /REPEAT -->

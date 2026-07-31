@@ -17,11 +17,11 @@ rules:
 
 ## Professional Summary
 
-{{THREE OR FOUR SENTENCES: your discipline and years in it, the scope and scale you operate at, the two or three things you're genuinely known for, and what you're aiming at next. Tailored to this posting.}}
+{{PLACEHOLDER — three to four sentences. State your discipline and years in it, the scope and scale you operate at, and what you are known for. Specific to this posting. Replace entirely.}}
 
 ## Selected Highlights
 
-- {{STRONGEST RELEVANT ACCOMPLISHMENT, stated with its outcome}}
+- {{PLACEHOLDER — the single strongest relevant accomplishment for this posting, stated with its outcome. Replace entirely.}}
 - {{SECOND}}
 - {{THIRD}}
 - {{FOURTH}}
@@ -42,9 +42,9 @@ rules:
 ### {{JOB TITLE}} — {{ORGANIZATION}}
 {{MONTH YEAR}} – {{MONTH YEAR or Present}} · {{CITY, STATE or Remote}}
 
-{{ONE LINE OF CONTEXT: the size of the organization or team, the scope you owned, or what the group was responsible for. This is what makes the bullets legible to someone outside your company.}}
+{{PLACEHOLDER — one line. State the size of the organization or team and the scope you owned. Replace entirely.}}
 
-- {{ACCOMPLISHMENT: what you did, how, and what changed as a result}}
+- {{PLACEHOLDER — one accomplishment: what you did, how, and what changed as a result. Replace entirely.}}
 - {{ACCOMPLISHMENT}}
 - {{ACCOMPLISHMENT}}
 - {{ACCOMPLISHMENT}}
@@ -61,7 +61,7 @@ rules:
 ## Projects
 
 <!-- REPEAT -->
-**{{PROJECT NAME}}** — {{ONE LINE: what it is and what you did}}. {{OUTCOME, LINK, OR SCALE}}
+**{{PROJECT NAME}}** — {{PLACEHOLDER — one line: what the project is and what you did. Replace entirely.}} {{OUTCOME, LINK, OR SCALE}}
 <!-- /REPEAT -->
 
 <!-- Optional. Strongest for people whose best evidence isn't inside a job — side work, open source, volunteer builds, freelance. Delete the section if the experience section already carries the weight. -->
