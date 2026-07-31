@@ -1,15 +1,17 @@
 ---
 name: render-documents
-description: Use to turn an approved markdown document into a PDF the person can submit. No build step, no toolchain — a self-contained HTML file printed from any browser.
+description: Use to turn an approved markdown document into a self-contained HTML file. The agent never generates a PDF — the person prints one from their own browser.
 inputs: An approved resume.md or cover-letter.md, and scripts/print-shell.html
-outputs: A self-contained HTML file in output/, and a PDF the person saves from their browser
+outputs: A self-contained HTML file in output/. Nothing else — no PDF gets written by this skill.
 ---
 
 # Render a document
 
 ## Purpose
 
-Get from approved markdown to a submittable PDF, using only a browser. No pandoc, no LaTeX, no dependencies to install or break.
+Get from approved markdown to a self-contained HTML file the person can open and print. That's the entire scope of this skill.
+
+**This skill never produces a PDF.** It produces the HTML the person prints into one, themselves, in their own browser. No pandoc, no LaTeX, no Puppeteer, no headless Chrome, no dependency to install or break — see [`../docs/rendering.md`](../docs/rendering.md) → *Export policy* for why this is a hard rule and not just the current implementation.
 
 ## When to invoke
 
@@ -49,28 +51,37 @@ output/Jordan Vale - Product Analyst - Copperline Health.html
 
 **Name it for the recipient, not for yourself.** The file name is visible to whoever downloads it. Spell things out — no abbreviations, no slugs, no `v3-final`.
 
-### 3. Tell them how to get the PDF
+### 3. Check the file yourself before handing it over
 
-Exact steps, and say what each one is for:
+This is the automated half of verification — text analysis on the HTML you just wrote, no browser involved. Do this before telling them it's ready:
+
+- **No external references.** Grep the file for `http://`, `https://`, `<link`, `<script src`, `@import`. There should be none — everything is inline or it isn't self-contained.
+- **No leftover template debris.** No `{{PLACEHOLDER}}` text, no HTML comments, no `<!-- REPEAT -->` markers.
+- **The bullet-rhythm and word-count checks from `check-for-ai-tells.md` already ran** before this step — don't re-derive them here, just confirm that skill actually ran if you're not sure.
+
+If any of these fail, fix the HTML directly. None of this requires opening the file in anything.
+
+### 4. Tell them how to get the PDF, and what to check when they do
+
+**You do not render the PDF. They do, in their own browser.** Give them the steps and the checklist together — they're standing at the print dialog anyway, so the checks cost them nothing extra:
 
 > Written to `output/Jordan Vale - Product Analyst - Copperline Health.html`.
 >
 > To make the PDF: open that file in your browser — double-clicking usually works — and click **Save as PDF** at the bottom, or press Cmd+P (Ctrl+P on Windows).
 >
-> Two settings in the print dialog matter:
+> Three things in the print dialog:
 > - **Margins: Default.** The file sets its own; the browser's would double up.
 > - **Headers and footers: off.** Otherwise the browser stamps the file name and date onto your resume.
-
-### 4. Have them check the result
-
-Three things, and they take about a minute:
-
-> When you've got the PDF, check:
+> - **Background graphics: off**, unless you specifically want them.
+>
+> Then, on the result — takes about a minute:
 > 1. **Page count.** Should be one. [or two]
 > 2. **No job split across the page break** — a role's heading on one page with its bullets on the next looks careless.
 > 3. **The text check.** Select all the text in the PDF, copy it, and paste it into a blank note. Is your name there? Your phone number? Are the dates still attached to the right jobs, in the right order?
 
-That third one is the important one. Whatever they see in the pasted text is approximately what an applicant tracking system's database will hold. See [`docs/ats-notes.md`](../docs/ats-notes.md).
+That third one is the important one if the target is an applicant tracking system. Whatever they see in the pasted text is approximately what its database will hold. See [`docs/ats-notes.md`](../docs/ats-notes.md).
+
+**Never do this checking for them by generating a PDF yourself.** There's no renderer in this system on purpose — see [`docs/rendering.md`](../docs/rendering.md) → *Export policy*. If they don't want to check it themselves, say the checklist takes about a minute and ask again; don't route around it by producing the PDF.
 
 ### 5. Fix problems at the source
 
@@ -105,13 +116,18 @@ Rare, and worth handling as a one-off rather than maintaining a second toolchain
 
 ## Done looks like
 
-- A self-contained HTML file in `output/`, opening correctly in a browser with no network
+- A self-contained HTML file in `output/`, opening correctly in a browser with no network, no external references
 - Named appropriately for a recipient
-- The person has made the PDF and confirmed page count, page breaks, and the text check
 - No comments, no placeholders, no template guidance left in the output
+- No PDF anywhere in the repo — not in `output/`, not in an application folder
+- The person has made the PDF themselves and confirmed page count, page breaks, and the text check
 - Logged
 
 ## Common failure modes
+
+**Generating the PDF yourself.** This skill produces HTML, full stop. If you find yourself reaching for a renderer — Puppeteer, headless Chrome, anything — stop; that's exactly the dependency this system is built to avoid. Give the person the HTML and the checklist instead.
+
+**Saving a PDF into the repo**, even one the person sent you or asked you to keep. `output/` and `applications/<slug>/` hold the HTML, never a PDF export of it — a stored PDF goes stale the instant the HTML changes, and it's the stale one that gets attached by mistake later. If they want a copy kept, that's outside this repo, wherever they keep outgoing applications.
 
 **Saying it's done without the checks.** You can't see their PDF. Ask, and wait for the answer.
 

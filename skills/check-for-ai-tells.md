@@ -43,19 +43,27 @@ Flag every instance. None of these are banned outright, but each needs a reason 
 - **Uniform bullet length.** Every bullet running exactly two lines is the strongest single tell and the one most people never notice. Human bullets are lumpy because facts are lumpy.
 - **Identical cadence.** Every bullet shaped *verb → object → outcome clause*. Vary the shape or the eye reads template.
 - **"Not just X, but Y."** Also "It's not about X — it's about Y." Model-favored, rare in real resumes.
-- **Em-dash density.** More than one or two in a resume reads generated.
-- **Semicolons in bullets.** Almost always two bullets pretending to be one.
+- **Em-dash density.** More than one or two in a resume reads generated. **Count them, don't eyeball it.**
+- **Semicolons in bullets.** Almost always two bullets pretending to be one. **Count them too** — more than one or two on a resume is a flag the same way em-dashes are.
 - **Perfect parallelism across a whole section.** Slight asymmetry reads human.
 - **Every section the same length.** Real experience isn't evenly distributed.
 
-**Measure, don't eyeball.** The eye habituates to a rhythm within about three bullets and stops registering it. Actually count:
+**Measure, don't eyeball. All of this is plain text analysis — none of it needs a renderer or a browser, and it runs before the document is ever printed.** Actually count:
 
 ```
 per-bullet character count · min · max · spread · standard deviation ·
-count of ", X, and Y" patterns
+count of ", X, and Y" patterns · em-dash count · semicolon count
 ```
 
-Rough targets: **standard deviation above 20**, **spread above 60 characters**, **tricolons under a third of bullets**. Heuristics, not laws — but a document failing all three reads generated regardless of its vocabulary.
+Rough targets: **standard deviation above 20**, **spread above 60 characters**, **tricolons under a third of bullets**, **em-dashes and semicolons combined under three on a resume**. Heuristics, not laws — but a document failing all of them reads generated regardless of its vocabulary.
+
+**For a cover letter, also count total words against its format ceiling** — 325 for base, 500 for expanded (see the frontmatter of whichever template was used). Over the ceiling almost always means the letter is restating the resume; that's a finding on its own, not just a length problem. Report it the same way as any other tell:
+
+```markdown
+| # | Location | Tell | Type | Current | Proposed | Why it's stronger |
+|---|---|---|---|---|---|---|
+| 4 | Whole letter | Over word ceiling | length | 540 words (expanded ceiling: 500) | Cut paragraph 3, which restates the resume's scorecard bullet | The letter should say something the resume can't — this paragraph doesn't |
+```
 
 ### Pass 3 — Content tells
 
@@ -96,7 +104,7 @@ Then they approve row by row, same as any change list.
 ## Done looks like
 
 - All four passes have run
-- The structural measurements were taken, not estimated
+- The structural measurements were taken, not estimated — including em-dash, semicolon, and (for a cover letter) word-count-vs-ceiling
 - Every number cross-checked against its atom
 - Findings presented as a list, approved row by row
 - Unresolvable tells flagged rather than papered over with synonyms

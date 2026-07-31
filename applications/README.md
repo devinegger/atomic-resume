@@ -30,6 +30,8 @@ It also holds the skill table — the top ten to fifteen things the posting want
 
 **`resume.md`** and **`cover-letter.md`** are written only after you've approved what's in them. Drafts live in the conversation; the folder holds decisions.
 
+**No PDFs live here, ever.** The rendered, submittable file is the HTML in `output/`; a PDF is something you print from it yourself, on demand. Storing a PDF next to `resume.md` would mean two copies of the same document that can silently drift apart — you'd edit the markdown, forget to re-export, and send the old one. See [`../output/README.md`](../output/README.md).
+
 **`log.md`** is append-only. Dated lines, never rewritten:
 
 ```markdown

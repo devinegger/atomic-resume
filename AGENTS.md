@@ -112,6 +112,8 @@ This repo is plain markdown and folders. It works in any text editor, in an IDE,
 - **Rendered output is a self-contained HTML file** that opens in any browser. No build step, no toolchain, no dependencies. See [`docs/rendering.md`](docs/rendering.md).
 - **Tell them which file to open** rather than pasting long content into chat.
 
+**The HTML file is the deliverable. You never generate the PDF.** The person opens the HTML in their own browser and prints it. Never install, invoke, or depend on a PDF renderer — no Puppeteer, Playwright, headless Chrome, wkhtmltopdf, pandoc, WeasyPrint, or LibreOffice — for a routine export. There is no build step in this repo and none should ever get added for this. See [`docs/rendering.md`](docs/rendering.md) → *Export policy*.
+
 ---
 
 ## Privacy
@@ -137,6 +139,7 @@ Don't do these. Each one has cost someone a real application.
 - **Don't pad.** A tight one-page resume beats a padded two-page one. If there isn't enough material, the answer is more atoms, not longer sentences.
 - **Don't stuff keywords.** Use the posting's vocabulary for things they've actually done. That's it.
 - **Don't guess at a fact you could ask about.** A five-second question beats a wrong date on a submitted document.
+- **Don't generate the PDF yourself, and don't store one in the repo.** The HTML is the artifact; the PDF is a print the person makes. A saved PDF goes stale the moment the HTML underneath it changes, and a stale PDF is worse than none — it gets attached by mistake, still carrying a paragraph that was already cut. Give them the print checklist instead of rendering for them.
 - **Don't declare something done that you haven't verified.** If you rendered a PDF, check it. If you say the page count is two, count it.
 - **Don't decide between the base and expanded format on their behalf.** Explain the difference, recommend one with a reason, ask. See [`skills/choose-document-format.md`](skills/choose-document-format.md).
 

@@ -12,26 +12,37 @@ There's no build step, no toolchain, and nothing to install. A finished document
 - **Self-contained means durable.** No external stylesheet, no webfont, no image, no script beyond a print button. The file opens correctly on a machine with no internet connection, and it'll still open correctly in ten years, because nothing it depends on can go offline or get deprecated.
 - **Nothing to maintain.** A toolchain is one more thing that can break the week an application is due. This has no toolchain to break.
 
+## Export policy — HTML is the artifact, PDF is a print
+
+**The agent never generates a PDF.** The `.html` file in `output/` is the deliverable. The person opens it in their own browser and prints it to PDF when they need one — that's the entire export step, and it happens on their machine, not in this system.
+
+**Never install, invoke, or depend on a PDF renderer for routine export** — no Puppeteer, Playwright, headless Chrome, wkhtmltopdf, pandoc, WeasyPrint, or LibreOffice. There is no build step in this repo, and adding one to automate what a browser's print dialog already does for free is a regression, not an improvement.
+
+**Never write a PDF into the repo** — not into `output/`, not into an `applications/<slug>/` folder. This isn't a style preference: a stored PDF goes stale the moment the HTML underneath it gets edited, and a stale PDF is worse than none — it's the version that gets attached by mistake, still carrying a paragraph that was already cut. If the person wants to keep a copy, that's fine — just point them outside this repo, wherever they keep their outgoing applications.
+
+**Verification is split by what it costs:**
+
+*Automated — the agent does this itself, no renderer required:*
+- per-bullet character count, min/max, spread, and standard deviation
+- tricolon ratio (count of `, X, and Y` patterns)
+- em-dash and semicolon counts
+- word count against the cover letter's format ceiling
+- the HTML file's own structure — self-contained, no external stylesheet/script/font reference, no leftover template comments
+
+All of this is text analysis. None of it needs a browser, and it happens before the person ever opens the file. See [`../skills/check-for-ai-tells.md`](../skills/check-for-ai-tells.md) and [`../skills/render-documents.md`](../skills/render-documents.md).
+
+*Human, at print time — the person checks this, the agent gives them the list:*
+- page count, and that no role block splits across a page break
+- margins **Default**, headers and footers **off**, background graphics off
+- the text-extraction check, if the target is an applicant tracking system
+
+**Why the split:** the layout checks genuinely need a rendering engine to answer — page breaks, margins, and print output only exist once something renders. The person is already opening a browser to print; asking them to glance at print preview while they're there costs nothing. Standing up a renderer to do that glance on their behalf costs real money on every single run, for a document they're about to open anyway.
+
 ## The shell
 
 [`../scripts/print-shell.html`](../scripts/print-shell.html) is the template every rendered document uses. It's deliberately plain — see [`ats-notes.md`](ats-notes.md) for why — single column, standard fonts, no tables, no graphics, contact details in the body rather than a page header.
 
 The [`render-documents`](../skills/render-documents.md) skill converts an approved markdown file into HTML by hand (there's no markdown-to-HTML tool involved) and drops it into the shell's content block. If a document runs slightly long or short, the fix is the `--base-size` and `--line-height` variables at the top of the shell — never below 10pt, and cutting content is almost always the better fix.
-
-## Getting the PDF
-
-Open the rendered HTML file in a browser, then either click the **Save as PDF** button at the bottom of the page or press Cmd+P / Ctrl+P. Two settings in the print dialog matter:
-
-- **Margins: Default.** The file sets its own page margins; the browser's default margins would stack on top of them.
-- **Headers and footers: off.** Otherwise the browser stamps a file name and today's date across the page.
-
-## Before it's done
-
-Three checks, all covered in [`render-documents.md`](../skills/render-documents.md):
-
-1. **Page count** matches what was intended.
-2. **No role splits across a page break** — a job title stranded at the bottom of one page with its bullets starting the next.
-3. **The text-extraction check** — select all the text in the PDF, copy it, paste it into a blank note, and confirm the name, contact details, and job history come out in the right order. This is the check that actually matters for applicant tracking systems; see [`ats-notes.md`](ats-notes.md) for why.
 
 ## When a portal insists on `.docx`
 

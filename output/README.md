@@ -15,9 +15,11 @@ output/
 3. **Two settings matter** in the print dialog:
    - **Margins: Default** — the file sets its own, and the browser's would double up on them.
    - **Headers and footers: off** — otherwise your browser stamps the file name and today's date across your resume.
-4. Save it wherever you keep things you're sending.
+4. Save it wherever you keep things you're sending — **not back into this folder.**
 
 No software to install. Any browser works. The HTML file has no dependencies at all — no fonts to download, no internet needed — so it'll still open correctly in ten years.
+
+**Why not save the PDF here too:** this folder only ever holds the HTML, which is the real, editable artifact. If a PDF export sits next to it and the HTML later gets edited — a bullet cut, a phrase changed — the PDF quietly goes stale. A stale PDF is worse than none: it's the one that gets attached by mistake, still carrying something that isn't true anymore. Regenerating a fresh PDF from the current HTML takes ten seconds, so there's never a reason to keep an old one around.
 
 ## Check it before you send it
 
