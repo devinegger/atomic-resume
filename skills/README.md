@@ -20,7 +20,7 @@ One markdown playbook per capability. Plain files any agent can read — nothing
 | [`check-for-ai-tells.md`](check-for-ai-tells.md) | **Last**, before rendering | A findings list, approved row by row |
 | [`render-documents.md`](render-documents.md) | A document is approved and needs to become a PDF | A self-contained HTML file in `output/`, and a PDF they save |
 | [`track-applications.md`](track-applications.md) | Something was submitted, or something came back | An up-to-date `log.md` and a plain status summary |
-| [`prepare-for-interview.md`](prepare-for-interview.md) | An interview or screen is scheduled | `interview-prep.md` — every claim that could be probed |
+| [`prepare-for-interview.md`](prepare-for-interview.md) | An interview or screen is scheduled | `story-bank.md`, a portable mock prompt, and a one-page card for the day |
 | [`maintain-profile.md`](maintain-profile.md) | A new fact, a better phrasing, or a correction — **never mid-application** | Updated `profile/` files |
 | [`run-a-deep-dive.md`](run-a-deep-dive.md) | One posting is worth a day rather than half an hour | A tailored application, and a much larger `profile/` |
 

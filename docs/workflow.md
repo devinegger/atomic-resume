@@ -54,7 +54,9 @@ analyze-job-posting → match-atoms-to-posting → choose-document-format
 
 **[`adopt-template-format`](../skills/adopt-template-format.md)** — when the person wants a resume shape other than the two that ship here. Takes structure only, never wording, and warns plainly about anything that will parse badly in an applicant tracking system.
 
-**[`prepare-for-interview`](../skills/prepare-for-interview.md)** — once an interview is scheduled. Works backward from what was actually submitted to find every number that needs a ready answer and every distinction (`Note:` field) worth volunteering before it's asked about.
+**[`prepare-for-interview`](../skills/prepare-for-interview.md)** — once an interview is scheduled. Starts from what was actually submitted rather than from the profile, because the sent document is what the interviewer is holding and the two drift apart after submission. Finds every number that needs a ready answer, every distinction worth volunteering before it's asked about, and every place the page and the current record disagree — then coaches the version that contains both rather than contradicting the page.
+
+Two things in it are easy to skip and shouldn't be. The **logistics block** — money, timing, notice, travel, why they're leaving — is a whole category of fact no document carries, so nothing earlier in the loop ever had a reason to ask, and it's standard screen material. And the **mock**, which is the only part that tests delivery. Prep fails on delivery far more often than on knowledge.
 
 **[`maintain-profile`](../skills/maintain-profile.md)** — adding an atom, adding a skill, promoting a better phrasing, or correcting a fact. Deliberately kept out of the per-application loop: a fact that isn't an atom yet isn't usable in the application that surfaced it, which is what keeps the truthfulness rule from collapsing under time pressure.
 
