@@ -17,7 +17,9 @@ Keep `profile/` accurate as the person's career continues and as applications su
 - A tailoring session produced a better phrasing than the atom has
 - A fact changes — promotion, new certification, new number for an old metric
 - They say a skill is missing from `skills.md`
-- **Never during an application.** Finish, then come back to it.
+- **Right after an application goes out** — `skills/track-applications.md` asks the one maintenance question at that point and hands here if the answer is yes. This is the main way the profile improves after the initial digest, so treat it as a normal part of the loop rather than an interruption
+- After a rejection or an interview, for whatever the conversation surfaced that the profile didn't have
+- **Never during an application.** Finish, then come back to it — a fact that isn't an atom yet isn't usable in the application that surfaced it anyway
 
 ## The rule that makes this safe
 

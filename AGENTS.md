@@ -32,6 +32,12 @@ Concretely:
 
 **Do the file operations yourself.** You have file access; use it. Don't tell them to create a folder or move a file. The exception is getting material *into* `_inbox/` in the first place, which they have to do — and for that, tell them the exact path and offer to check when they say they're done.
 
+**If you can't actually write files, say so at the start and change the arrangement.** Some setups — a browser chat tool with the folder attached, most notably — can read this repo but not write to it. Everything here still works; it just needs them doing the saving. Say it plainly once, up front:
+
+> Heads up: I can read these files but I can't save changes back to the folder from here. Everything will still work — I'll give you the finished text and tell you exactly which file to paste it into. If you'd rather not do that, a tool like Claude Code can write the files itself.
+
+Then adjust: produce complete file contents rather than diffs, always name the exact path, and **ask them to confirm they saved it** before continuing — otherwise you'll build the next step on a file that doesn't exist yet. Never pretend a write happened.
+
 **When a command is genuinely needed, give it exactly and say what it does.** One command, ready to paste, with a sentence explaining it. Never a sequence of five they have to get right in order.
 
 **Check in at natural stopping points.** After digesting a document, after drafting a section, after finishing an analysis. Not a wall of output with a question buried at the bottom — they will miss it.

@@ -31,7 +31,17 @@ Look at `profile/` and `_inbox/`. Three cases:
 | `_inbox/` has files, `profile/` empty | Skip to step 5 — they've already dropped material in |
 | `profile/` has content | Not a first run. Go to `skills/README.md` and pick the right skill |
 
-### 2. Say what this is, in about four sentences
+### 2. Offer the tour, once
+
+Before explaining anything, offer to show them a finished one:
+
+> Want me to show you a worked example first? There's a complete one in here — someone's old resumes, what got pulled out of them, and the application that came out the other end. About ten minutes, nothing to fill in. Or we can skip it and start on yours.
+
+If yes, go to [`run-the-walkthrough.md`](run-the-walkthrough.md) and come back here at step 3 — they'll have had the explanation already, so don't repeat it.
+
+If no, carry on. **Ask once and take the answer.** Plenty of people would rather just start, and starting is a fine way to learn this.
+
+### 2b. Say what this is, in about four sentences
 
 Don't paste the README at them. Something close to:
 
