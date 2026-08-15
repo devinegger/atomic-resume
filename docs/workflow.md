@@ -30,7 +30,7 @@ analyze-job-posting → match-atoms-to-posting → choose-document-format
   → render-documents → track-applications
 ```
 
-**[`analyze-job-posting`](../skills/analyze-job-posting.md)** — parses a posting into must-haves, nice-to-haves, keywords, and an honest seniority read. Produces the skill-intersection table — the top requirements, ranked, each marked as a direct match, a variant match, a partial, or a gap — and shows it in chat. Ends with a plain verdict on whether the posting is worth pursuing at all.
+**[`analyze-job-posting`](../skills/analyze-job-posting.md)** — parses a posting into must-haves, nice-to-haves, keywords, the stated level (recorded with the evidence quoted, never rated), and how the posting actually accepts an application — which changes what gets built if a tailored document can't be delivered. Produces the skill-intersection table — the top requirements, ranked, each marked as a direct match, a variant match, a partial, or a gap — and shows it in chat. Ends with a plain verdict on whether the posting is worth pursuing at all.
 
 **[`match-atoms-to-posting`](../skills/match-atoms-to-posting.md)** — maps every requirement to specific atoms and rates it strong, partial, or gap, with partials spelled out precisely so they can't drift into overclaims later. Produces `fit-analysis.md`, which is what assembly reads from.
 

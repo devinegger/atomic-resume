@@ -51,7 +51,32 @@
     padding: var(--page-margin);
     background: #fff;
     box-shadow: 0 0 0.12in rgba(0,0,0,0.18);
+
+    /* Screen-only page rulers — see the note below. */
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent calc(11in - 1px),
+      rgba(190, 60, 60, 0.4) calc(11in - 1px),
+      rgba(190, 60, 60, 0.4) 11in
+    );
   }
+
+  /* ----------------------------------------------------------
+     The page ruler, on screen only.
+
+     A faint line is drawn every 11 inches down the page, so you
+     can see roughly where the paper would break without printing
+     anything. Content crossing the first line means two pages.
+     Crossing the second means three, which is usually a surprise
+     and always worth knowing before you hit print.
+
+     It's a guide, not an oracle — your real page breaks depend on
+     your browser, your fonts, and your paper size. Use it to catch
+     a regression early; use your own print preview to decide.
+
+     `@media print` removes it, so it can never reach a PDF.
+     ---------------------------------------------------------- */
 
   @media print {
     html, body { background: #fff; }   /* html too — it paints the canvas */
@@ -60,6 +85,7 @@
       padding: 0;
       max-width: none;
       box-shadow: none;
+      background-image: none;          /* no rulers on paper, ever */
     }
     .no-print { display: none !important; }
   }

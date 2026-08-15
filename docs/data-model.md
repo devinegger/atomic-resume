@@ -87,7 +87,7 @@ Composition is **selection and arrangement**. It is never authoring.
 
 When a posting arrives, the agent:
 
-1. **Parses the posting** into must-haves, nice-to-haves, the keywords in the posting's own words, and an honest read of what seniority it actually is.
+1. **Parses the posting** into must-haves, nice-to-haves, the keywords in the posting's own words, the level the posting *states* (quoted, never rated — the system can't see what a title means at that company), and how the posting actually accepts an application.
 2. **Maps each requirement to your atoms** and rates it *strong*, *partial*, or *gap*. Gaps get named plainly. A posting where the top requirements are all gaps is a posting to skip, and finding that out in five minutes is a feature.
 3. **Selects and orders** — which atoms, in what order, at Long or Short density, with which skills on the skills line in which words.
 4. **Fills the template**, or presents a change list against a resume you already have.
