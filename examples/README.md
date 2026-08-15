@@ -11,7 +11,7 @@ jordan-vale/
   _inbox/                        what Jordan started with — two old resumes and a review
   profile/                       what the digest produced
     master.md                    the factual spine
-    achievements.md              nine atoms — the important file
+    achievements.md              ten atoms — the important file
     skills.md                    skills with evidence and alternate names
     voice.md                     how Jordan writes
   applications/

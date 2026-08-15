@@ -36,7 +36,7 @@ Neither register is an accomplishment. A duty says what you were *responsible fo
 
 [`examples/jordan-vale/profile/`](../examples/jordan-vale/profile/) — four files.
 
-**The important one is [`achievements.md`](../examples/jordan-vale/profile/achievements.md).** Nine atoms. Open it and read three or four.
+**The important one is [`achievements.md`](../examples/jordan-vale/profile/achievements.md).** Ten atoms. Open it and read three or four.
 
 Each one is a single fact with a fixed shape:
 
@@ -54,8 +54,9 @@ Each one is a single fact with a fixed shape:
 
 **Two lengths**, so the same fact fits a dense layout or a roomy one without being rewritten. **A number and how it was counted** — because a number you can't explain is a number that ends an interview. **A pointer back to where it came from**, so you can check it eighteen months later when someone asks.
 
-Four things in that file are worth looking at specifically:
+Five things in that file are worth looking at specifically:
 
+- **One atom is marked `Status: thin`.** Real work, but nothing recorded about how it turned out. It didn't get thrown away — it's written down with the open question attached, so it can be promoted the moment Jordan remembers what came of it. This matters more than it looks: a system that refuses to write down what you tell it is one you stop telling things to.
 - **Some atoms say `Unmeasured`.** That's a finished answer, not a defect. Plenty of real accomplishments were never measured, and they go on resumes all the time. What sinks people is a number they can't defend, not the absence of one.
 - **One atom has a `Use:` field** saying it's better as an interview answer than a resume bullet. Some work is genuinely good and reads wrong on a page. The atom keeps the record; the field keeps it off the resume by default. You can always overrule it.
 - **One records that Jordan directed a build rather than writing the code.** The accomplishment is entirely Jordan's. The programming language still doesn't go on the skills line, because a skills line is a claim about what you can do unaided and a technical screen tests it that way. Both things are true at once and the profile holds both.

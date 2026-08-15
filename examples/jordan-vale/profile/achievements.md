@@ -108,12 +108,25 @@ Atomic accomplishments. Every bullet any resume can use exists here first, exact
 
 ---
 
+### tms-implementation-support
+- **Long:** Did data validation and user acceptance testing for a transportation management system implementation.
+- **Short:** Ran data validation and UAT for a TMS implementation.
+- **Status:** thin — real work, but the outcome isn't recorded and Jordan was clear this wasn't ownership. Not a default resume bullet; kept because it's true, it's the only TMS exposure in the profile, and a posting that names TMS work would want to know about it.
+  ⚠️ Needs: did the validation catch anything that changed the rollout, or was it routine?
+- **Metric:** Unmeasured.
+- **Role:** Operations Analyst, Northwind Logistics, 2020–2022
+- **Tags:** #data #delivery
+- **Evidence:** _inbox/resume-2024-draft.md ("assisted with the implementation of a new transportation management system"); Jordan, during the digest — "I did data validation and some UAT, nothing I'd call ownership."
+
+---
+
 ## Not extracted — and why
 
-From `_inbox/resume-2021.md` and `_inbox/resume-2024-draft.md`. Kept visible so the same material doesn't get re-litigated every session.
+**Running in standard mode**, so material that's real but thin became an atom marked `Status: thin` rather than being rejected — see `tms-implementation-support` above. What's left here is material that isn't an accomplishment of Jordan's in any mode: duties, attendance, and someone else's opinion.
+
+Kept visible so the same material doesn't get re-litigated every session, and so Jordan can correct it — **if any of these did end in something, say so and it becomes an atom.**
 
 - *"Responsible for reporting on carrier performance and shipment data"* — a duty, not an accomplishment. Superseded by the specific, dated version of this work captured in `carrier-scorecard-rollout` and `reporting-automation-script`.
-- *"Assisted with the implementation of a new transportation management system"* — assisted is not delivered, and no outcome is stated. Asked Jordan about this during the digest; the honest answer was "I did data validation and some UAT, nothing I'd call ownership." Not strong enough to be its own atom.
 - *"Participated in weekly operations meetings with regional managers"* — attendance is not an accomplishment.
 - *"Supported the warehouse team during peak season"* — vague, no artifact. Superseded by `peak-season-staffing-model`, which is the specific thing this was probably gesturing at.
 - *"Maintained a high customer satisfaction rating"* — no number, no source, and "high" is doing all the work in the sentence. Asked Jordan; no record of the actual rating exists anymore.
@@ -122,4 +135,4 @@ From `_inbox/resume-2021.md` and `_inbox/resume-2024-draft.md`. Kept visible so 
 
 ## Processed source material
 
-- 2026-02-10 — resume-2021.md, resume-2024-draft.md, performance-review-2025.md. First extraction pass, nine atoms.
+- 2026-02-10 — resume-2021.md, resume-2024-draft.md, performance-review-2025.md. First extraction pass, ten atoms (nine full, one marked thin).
