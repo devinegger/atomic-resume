@@ -22,6 +22,7 @@ One markdown playbook per capability. Plain files any agent can read — nothing
 | [`track-applications.md`](track-applications.md) | Something was submitted, or something came back | An up-to-date `log.md` and a plain status summary |
 | [`prepare-for-interview.md`](prepare-for-interview.md) | An interview or screen is scheduled | `interview-prep.md` — every claim that could be probed |
 | [`maintain-profile.md`](maintain-profile.md) | A new fact, a better phrasing, or a correction — **never mid-application** | Updated `profile/` files |
+| [`run-a-deep-dive.md`](run-a-deep-dive.md) | One posting is worth a day rather than half an hour | A tailored application, and a much larger `profile/` |
 
 ## The usual order
 
@@ -40,6 +41,8 @@ analyze-job-posting → match-atoms-to-posting → choose-document-format
 ```
 
 **As needed:** `gather-source-material` when there's nothing to digest · `adopt-template-format` when the shipped templates aren't right · `prepare-for-interview` when one gets scheduled · `maintain-profile` between applications.
+
+**Occasionally:** `run-a-deep-dive` wraps the per-application sequence for a single posting worth an outsized amount of attention. It's the only skill that expects new atoms to come out of an application rather than after it — see the file for why that's safe there and nowhere else.
 
 ## Two rules that cut across all of them
 

@@ -14,7 +14,7 @@ first-run → process-inbox → decompose-into-atoms → capture-voice
 
 **[`process-inbox`](../skills/process-inbox.md)** — reads everything in `_inbox/`, works out what each document is, and — critically — compares documents that cover the same ground *before* extracting from either one. Two resumes covering the same three years produce a conflict list, not two slightly different atoms. Conflicts go to the person as explicit questions; nothing gets silently resolved.
 
-**[`decompose-into-atoms`](../skills/decompose-into-atoms.md)** — the core of the whole system. Turns the routed material into atoms: rejects verbs-of-intent and duty language, splits multi-fact bullets, gets a real number or writes `Unmeasured`, checks whether something was built unaided or designed-and-directed, tags for selection, and deduplicates across sources. Produces `profile/achievements.md`.
+**[`decompose-into-atoms`](../skills/decompose-into-atoms.md)** — the core of the whole system. Turns the routed material into atoms: separates accomplishments from duty and intent language, splits multi-fact bullets, gets a real number or writes `Unmeasured`, tags for selection, and deduplicates across sources. Produces `profile/achievements.md`. Runs in one of two modes — by default it keeps thin material as a marked atom rather than refusing it; see [`../AGENTS.md`](../AGENTS.md) → *Extraction modes*.
 
 **[`capture-voice`](../skills/capture-voice.md)** — builds `profile/voice.md` from writing the person actually did, not from a description of their style. Runs whenever there's a cover letter or email in the source material to learn from.
 
@@ -36,7 +36,7 @@ analyze-job-posting → match-atoms-to-posting → choose-document-format
 
 **[`choose-document-format`](../skills/choose-document-format.md)** — a deliberately separate step, run immediately before building anything. The agent explains base versus expanded in one or two sentences, recommends one with a reason, and asks. Never decided silently.
 
-**[`assemble-resume`](../skills/assemble-resume.md)** — the first time, fills a template from selected atoms. Every application after that, presents a change list against the existing resume — REORDER, CUT, REWRITE, ADD rows, each justified by a specific posting line — for row-by-row approval. Never a rewritten document dropped in whole.
+**[`assemble-resume`](../skills/assemble-resume.md)** — the first time, fills a template from selected atoms. Every application after that, presents a change list against the existing resume — REORDER, CUT, REWRITE, ADD rows, each justified by a specific posting line. Never a rewritten document dropped in whole. Rows that change a claim always get their own answer; the rest can be approved together. Anything being left off the page gets named and offered rather than dropped quietly.
 
 **[`draft-cover-letter`](../skills/draft-cover-letter.md)** — writes one when it's warranted (asked for, or there's something specific to say) and says plainly when it isn't. Pulls its argument from the fit analysis rather than restating the resume.
 
@@ -57,6 +57,8 @@ analyze-job-posting → match-atoms-to-posting → choose-document-format
 **[`prepare-for-interview`](../skills/prepare-for-interview.md)** — once an interview is scheduled. Works backward from what was actually submitted to find every number that needs a ready answer and every distinction (`Note:` field) worth volunteering before it's asked about.
 
 **[`maintain-profile`](../skills/maintain-profile.md)** — adding an atom, adding a skill, promoting a better phrasing, or correcting a fact. Deliberately kept out of the per-application loop: a fact that isn't an atom yet isn't usable in the application that surfaced it, which is what keeps the truthfulness rule from collapsing under time pressure.
+
+**[`run-a-deep-dive`](../skills/run-a-deep-dive.md)** — wraps the whole per-application sequence when one posting is worth roughly a day instead of half an hour. Interviews the posting line by line rather than asking one bounded round of questions, checks the employer's other open roles, and verifies claims made *about the employer* as carefully as claims about the candidate. It's the one place new atoms are written during an application rather than after — licensed by the person's sustained attention, and revoked the moment the pace picks up. The reason to run it is that the atoms outlast the application: even a rejection leaves the profile permanently bigger.
 
 ---
 
