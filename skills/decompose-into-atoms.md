@@ -43,21 +43,49 @@ Source documents are written in the wrong register. Resumes are written in duty 
 
 Go through the document and mark every place where that shape appears, even partially. Don't write anything yet. A first pass on a two-page resume usually surfaces ten to twenty candidates, and maybe eight survive.
 
-### 2. Reject the things that aren't accomplishments
+### 2. Sort out what's an accomplishment and what isn't
 
-Be strict here. A profile full of weak atoms is worse than a profile with six strong ones, because selection can't tell them apart and the weak ones crowd out the good ones on the page.
+**Check the mode first.** `AGENTS.md` → *Extraction modes*. No `Extraction mode:` line in `profile/master.md` means **standard**, which is where most people should be. Say which one you're in, in one clause, before you start.
 
-**Verbs of intent are not achievements.** These describe activity, not outcome:
+The categories below are the same in both modes. **What changes is what happens to the material in them** — in standard it becomes a thin atom carrying a question, in strict it goes to the ledger.
+
+**Verbs of intent are not achievements *yet*.** These describe activity, not outcome:
 
 > explored · investigated · researched · participated in · assisted with · supported · was involved in · helped shape · contributed to (when nothing specific followed) · attended · was exposed to · gained familiarity with
 
-*Explored the vendor landscape for a new TMS* is not an accomplishment. If the exploration ended in a recommendation that someone acted on, **that** is the accomplishment, and it's a different sentence.
+*Explored the vendor landscape for a new TMS* isn't an accomplishment on its own. If the exploration ended in a recommendation someone acted on, **that** is the accomplishment, and it's a different sentence — one you probably have to ask for.
 
-**Duties are not achievements.** "Managed a team of six" is a fact about the job, and it belongs in `master.md` as scope. What they did with the six people is the atom.
+**Duties are not achievements.** "Managed a team of six" is a fact about the job and belongs in `master.md` as scope. What they did with the six people is the atom.
 
-**Evaluations are not achievements.** "Rated exceeds expectations" and "known for attention to detail" are someone's opinion. Look for what the reviewer was describing when they wrote it, and ask about that.
+**Evaluations are not achievements.** "Rated exceeds expectations" and "known for attention to detail" are someone's opinion. Look for what the reviewer was describing, and ask about that.
 
-**Keep a ledger of what you rejected and why.** Write it into `achievements.md` under a `## Not extracted` heading at the bottom, with a one-line reason each. Two reasons this matters: the person can see something was considered rather than missed, and a later session doesn't re-litigate the same material. It also means that if "explored the vendor landscape" *did* end in something, the person can look at that list and say so.
+#### What to do with them
+
+**In standard mode — keep it, mark it, ask about it.** Write the atom with what you have and add a `Status:` field:
+
+```markdown
+### tms-vendor-review
+- **Long:** Reviewed transport management vendors for a replacement system.
+- **Status:** thin — activity recorded, outcome unknown.
+  ⚠️ Did anything come of the review? A recommendation, a decision, a purchase?
+- **Metric:** Unmeasured.
+```
+
+The atom exists, so it's findable and it's theirs. It's marked, so composition knows not to lead with it. And the question is attached to the thing it's about, rather than sitting in a list at the bottom of a file.
+
+**Why this way round:** the material a person volunteers about their own career is not noise to be filtered. Refusing to write it down — even correctly, even with a good reason — is experienced as being told it didn't count, and after that happens three or four times people stop offering things. A thin atom costs one line and can be promoted the moment they answer. A rejected one usually never comes back, because nobody enjoys arguing for their own work twice.
+
+**In strict mode — reject it to the ledger**, under a `## Not extracted` heading at the bottom of `achievements.md`, one line of reason each.
+
+#### The ledger, either way
+
+Keep it in both modes; it just holds different things. In strict it's a decision record. In standard it's for material that genuinely isn't about them — a team's win with no identifiable contribution, a paragraph of company boilerplate.
+
+**Frame it as recoverable, not as a verdict.** When you show it, invite the correction:
+
+> Six things I didn't turn into atoms are listed at the bottom — mostly job duties and one thing that reads like your manager's opinion rather than something you did. Worth a skim in case I got one wrong; if any of them actually ended in something, tell me and it becomes an atom.
+
+⚠️ **If the ledger is longer than the atom list, the pass was too strict.** Go back. Something is being read as duty language that's actually an accomplishment stated modestly, which is how a great many people write about themselves.
 
 ### 3. Split until each atom holds one fact
 
@@ -111,13 +139,21 @@ This is where atoms are won or lost.
 
 That phrasing survives an interview. "Saved 10 hours a week" does not, if nobody counted.
 
-Mark atoms that need a number with a visible flag so they're easy to find later:
+**`Unmeasured` is a finished answer, not a defect.** In **standard mode** it gets written and you move on — no flag, no follow-up, no implication that the atom is worth less. Plenty of real accomplishments were never measured by anyone, and a page of them is still a good page.
+
+In **strict mode**, flag it so it's easy to come back to:
 
 > **Metric:** Unmeasured. ⚠️ Needs: did anyone outside the team end up using it?
+
+The distinction that matters in both modes is between *unmeasured* and *unanswered*. "Nobody counted it" is a closed question. "I don't know whether anyone used it" is an open one, and it's worth attaching to the atom either way — but only once, and never as a reproach.
 
 ### 7. Run the "unaided?" check
 
 For anything technical, ask yourself: **could this person do this without help?**
+
+**When to ask depends on the mode.** In **standard**, hold the question until it's actually load-bearing — the moment a skills line would claim the technology, which is `skills/match-atoms-to-posting.md`, not here. In **strict**, ask at extraction, per technical atom.
+
+The reason standard defers it: asked at extraction, this question arrives while someone is describing something they're proud of, and it lands as *did you really do that?* Asked when a skills line is being built, the same question is obviously practical — *are we putting Python on the page or not?* — and people answer it easily. Same information, same protection, and only one of the two versions makes someone feel audited.
 
 There's a common and completely legitimate situation where someone designed a thing, directed it, debugged it, decided what it should do, and drove it to working — but didn't personally write the code, because an AI or a contractor or a teammate did that part.
 
@@ -227,11 +263,12 @@ Most atoms from old resumes are missing their outcome. You will have a lot of qu
 ## Done looks like
 
 - `profile/achievements.md` exists with atoms in the documented format
+- The active mode was stated out loud before extraction started
 - Every atom has all six required fields, and `Metric` is either sourced or explicitly `Unmeasured`
-- Nothing in the file is a duty, an intent, or an evaluation
-- A `## Not extracted` section records what was skipped and why
+- Nothing is presented as an accomplishment that's a duty, an intent, or an evaluation — in standard mode that means marked `Status: thin`, in strict mode it means in the ledger
+- The `## Not extracted` section is shorter than the atom list
 - Every atom traces to a source in its `Evidence` field
-- The person has seen the summary and knows what's thin
+- The person has seen the summary, knows what's thin, and was invited to correct the ledger
 
 ## Common failure modes
 
@@ -248,3 +285,7 @@ Most atoms from old resumes are missing their outcome. You will have a lot of qu
 **Asking too many questions at once.** Covered above, and worth repeating: it's the difference between a profile that gets finished and one that gets abandoned.
 
 **Skipping the not-extracted ledger.** Without it, the same weak material gets reconsidered every session, and the person can't tell what you chose to leave out.
+
+**Being strict at them instead of about the work.** The rules on this page exist to keep an interview from going badly. None of them are a reason to make someone defend their own career to you. If a pass has produced more rejections than atoms, or the person has started shortening their answers, the pass is running wrong — go back to standard mode, keep what they told you, and mark what's thin.
+
+**Running strict mode because it feels more rigorous.** Strict exists for someone who has asked for it, usually because they've been burned in an interview and want the extra friction. Choosing it on their behalf gets you a shorter profile and a person who stops volunteering things.
