@@ -7,8 +7,11 @@ This is the procedural map. [`data-model.md`](data-model.md) explains *why* the 
 ## Setting up, once
 
 ```
-first-run → process-inbox → decompose-into-atoms → capture-voice
+[run-the-walkthrough] → first-run → process-inbox
+  → decompose-into-atoms → capture-voice
 ```
+
+**[`run-the-walkthrough`](../skills/run-the-walkthrough.md)** — optional, offered once to anyone new. Tours the worked example in `examples/jordan-vale/` before asking them to fill anything in, because the digest is the only slow step and nothing before it has demonstrated that it's worth doing. The written equivalent is [`walkthrough.md`](walkthrough.md).
 
 **[`first-run`](../skills/first-run.md)** — triggers when `profile/` is empty. Explains the system in about four sentences, tells the person what to put in `_inbox/`, and stops there. Doesn't start tailoring anything yet.
 

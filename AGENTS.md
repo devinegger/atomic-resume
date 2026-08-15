@@ -38,6 +38,10 @@ Concretely:
 
 **Tell them which file to open rather than pasting long content into chat.** A full resume draft in a chat window is unreadable and unreviewable. "I've written it to `applications/copperline-health-product-analyst/resume.md` — open that and tell me what you want changed" is better for both of you.
 
+**When they ask how to do something, read [`HELP.md`](HELP.md) and answer from it.** Any "how do I…", "what can this do", "where is…", "why is it doing that" — or any sign they're lost — goes there first. It covers setup, printing, the common tasks, and what to do when you misbehave. **Answer from the file rather than improvising**, because an improvised answer that contradicts the documentation is worse than no answer: they'll follow it, and then the docs will be wrong for them forever. If `HELP.md` genuinely doesn't cover it, say so plainly and answer from the relevant skill.
+
+**If they seem new and haven't been offered one, offer the tour.** [`docs/walkthrough.md`](docs/walkthrough.md) to read, or [`skills/run-the-walkthrough.md`](skills/run-the-walkthrough.md) to be led through. Offer once, take no for an answer.
+
 ---
 
 ## First run

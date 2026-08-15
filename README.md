@@ -10,34 +10,69 @@ This repo stores each accomplishment exactly once — as an **atom**: one fact, 
 
 That loop — **drop in your old material → the agent digests it into atoms → you apply, and it composes a tailored document from what's true** — is the whole system. [`docs/data-model.md`](docs/data-model.md) has the full reasoning if you want it; you don't need to read it to get started.
 
-## What you need
-
-An AI agent with access to files on your computer — Claude Code, Codex, Cursor, or a chat tool with this folder attached. That's it. No account to create, no service to sign up for, nothing to install beyond the agent itself.
-
 ## Setup
 
-Clone this repo, or download it as a folder. Open it in whatever agent you're using. That's the entire setup — there's no build step and nothing to configure.
+Three steps, about fifteen minutes. Each one ends with something you can check, so you never move on from a broken state.
+
+**Everything here is free**, and none of it sends your career history anywhere — see [Privacy](#privacy).
+
+### 1. Get the folder
+
+Click the green **Code** button at the top of this repo's page, choose **Download ZIP**, and unzip it. You'll get a folder called `atomic-resume`. Put it somewhere you'll find it again — Documents is fine.
+
+If you use git, `git clone` it instead. It makes no difference to anything below.
+
+> **Check:** the folder exists and contains `README.md`, `AGENTS.md`, and folders named `profile`, `templates`, and `skills`.
+
+### 2. Install Obsidian
+
+[Obsidian](https://obsidian.md) is a free app for reading and editing folders of markdown files. **You don't strictly need it** — this is plain text and any editor works — but it's the most comfortable way to read what the agent writes, and "use whatever editor you like" is unhelpful advice if you don't have one.
+
+1. Download it from [obsidian.md](https://obsidian.md) and install it like any other app.
+2. Open it. On the first screen, choose **Open folder as vault**.
+3. Pick the `atomic-resume` folder you just unzipped.
+4. If it asks about trusting the author or enabling plugins, either answer is fine — nothing here uses plugins.
+
+> **Check:** you can see the folder's files down the left-hand side, and clicking `README.md` shows you this page, formatted.
+
+Obsidian calls a folder a "vault." That's just their word for a folder — it isn't a special format, and nothing you do in Obsidian locks the files into it. You can delete Obsidian later and every file will still be a plain text file.
+
+### 3. Install an agent
+
+You need an AI agent that can read and write files on your computer. **[Claude Code](https://claude.com/claude-code) is the one this repo is built and tested against** — install it, then open a terminal, move into the folder, and run `claude`:
 
 ```bash
-git clone <this-repo-url>
-cd atomic-resume
+cd path/to/atomic-resume
+claude
 ```
 
-**No git, or not sure what that means?** Click the green "Code" button on the repo's page, choose "Download ZIP," then unzip it. You'll get a folder — open that instead of running the commands above.
+Other agents work too. **Codex** and most terminal-based tools behave the same way. **Cursor** or another editor-based agent: File → Open Folder, pick this folder. **A browser chat tool:** look for "attach folder" or "add files" and point it here — this works but is the most awkward option, because it can't write files for you.
 
-Then open that folder with your agent:
-
-- **Claude Code, Codex, or a similar CLI tool:** open a terminal, `cd` into the folder, and start the tool (for Claude Code, just run `claude`).
-- **Cursor or another editor-based agent:** use File → Open Folder and pick this folder.
-- **A chat tool in a browser:** look for an "attach folder" or "add files" option and point it at this folder.
-
-Once it's open, paste this:
+Once your agent is open, paste this:
 
 ```
 Read AGENTS.md, then help me get started. I'm new to this.
 ```
 
-Some tools (Claude Code among them) load a startup file automatically — you'll know it worked if the agent's first reply already talks about atoms, your profile, or this repo without you having explained anything. If that happens, you can skip pasting the prompt above. If nothing seems to happen, paste it anyway; it works either way. (If you're curious: Claude Code specifically reads `CLAUDE.md`, which just points to `AGENTS.md` — you don't need to open either one yourself.)
+Some tools load a startup file automatically and won't need it. **You'll know it worked if the agent's first reply talks about atoms, your profile, or this repo without you having explained anything.** If it doesn't, paste the line above — it works either way, and pasting it twice does no harm.
+
+> **Check:** the agent knows what this repo is, and has told you what to do next without you asking.
+
+**If nothing works, that's a bug in these instructions, not in you.** See [`docs/troubleshooting.md`](docs/troubleshooting.md).
+
+## Want a tour first?
+
+You don't have to start with your own history. There's a complete worked example in the repo — a fictional person, their old resumes, the atoms pulled out of them, and one finished application.
+
+**Read it yourself:** [`docs/walkthrough.md`](docs/walkthrough.md) walks the whole loop, in order, in about ten minutes.
+
+**Or have the agent walk you through it:**
+
+```
+Walk me through this using the example first.
+```
+
+Both are optional and skippable. Some people would rather just start.
 
 ## Quickstart
 
@@ -80,7 +115,9 @@ skills/         the step-by-step procedures the agent follows
 
 ## A note on where you work
 
-This is plain markdown files in plain folders. It works the same in Obsidian, in VS Code, in a terminal, or in a plain file browser — and any finished document is a self-contained HTML file that opens correctly in any browser, no matter what you used to build it. Obsidian happens to be a pleasant way to browse the folder structure and see the links between files, but nothing here depends on it.
+The setup above recommends Obsidian because a concrete recommendation beats an open field when you don't already have a preference. **Nothing here depends on it.**
+
+This is plain markdown files in plain folders. It works identically in VS Code, in a terminal, in TextEdit, or in a plain file browser, and any finished document is a self-contained HTML file that opens correctly in any browser no matter what you built it in. If you already have an editor you like, use that and skip step 2 entirely.
 
 ## Applicant tracking systems, briefly
 

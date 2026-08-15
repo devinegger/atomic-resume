@@ -6,6 +6,7 @@ One markdown playbook per capability. Plain files any agent can read — nothing
 
 | Skill | When it fires | What it produces |
 |---|---|---|
+| [`run-the-walkthrough.md`](run-the-walkthrough.md) | Someone new wants to be shown how this works before starting | A guided tour of the worked example, then a decision |
 | [`first-run.md`](first-run.md) | `profile/` is empty — a new clone, a new person | Source material in `_inbox/` and a shared plan |
 | [`gather-source-material.md`](gather-source-material.md) | They have little or nothing to digest, or a recent stretch of work isn't written down | New source documents in `_inbox/` |
 | [`process-inbox.md`](process-inbox.md) | There's new material in `_inbox/` | An inventory, a conflict list, and material routed to the right place |
