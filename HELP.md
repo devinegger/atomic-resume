@@ -76,6 +76,8 @@ Longer versions: [`docs/workflow.md`](docs/workflow.md) for the sequence, [`docs
 
 ## How do I…
 
+These are individual tasks. If what you have is a *situation* rather than a task — nothing's landing, an interview got scheduled, you've been away for months — [`docs/use-cases.md`](docs/use-cases.md) starts from there instead and says what's usually going on underneath it.
+
 ### …apply to a job?
 
 Paste the posting, or the link, and say you want to apply. The agent parses it, shows you how your background maps against what they're asking for, and tells you plainly whether it's worth the effort — sometimes the answer is no, and that's the feature.
