@@ -15,11 +15,17 @@ That's a different job from building the resume. A document is read in six secon
 
 **No "is it worth it" test.** Unlike a deep dive, this always runs — an interview is already the scarce thing.
 
-## What it costs
+## What it takes
 
-Roughly half a day of the person's attention, and it splits across sittings comfortably. More than an application, less than a deep dive.
+Less than people expect, and it flexes. An evening is comfortable. Two hours is enough for a real one. It splits across sittings without losing anything.
 
-**Start when it gets scheduled, not the night before** — some of this needs looking things up. If it *is* the night before, run the compressed version: Phase 1, Phase 3, and the mock. Those three are what most often change what someone says out loud.
+⚠️ **Don't lead with the time.** It isn't the deciding factor, and presenting it as one invites someone to skip preparing for an interview they already have — which is the scarce thing. No version of this is worse than walking in cold. Say what it does; mention the time when they ask, or when scheduling actually matters.
+
+**Ideally it runs the day before**, so it's fresh when it gets used.
+
+The one part that benefits from lead time is looking things up — a number nobody wrote down, a date, a record that has to be checked. If Phase 1 turns up anything like that, start it when the interview is scheduled and leave the rehearsal for the day before. Rehearsal decays; lookups don't.
+
+Under real time pressure, run Phase 1, Phase 3, and the mock. Those three are what most often change what someone says out loud.
 
 ## The branch that sets the whole session
 

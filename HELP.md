@@ -120,7 +120,9 @@ Ask. It'll also tell you when it thinks one isn't worth writing, which is most o
 
 ### …get ready for an interview?
 
-Say an interview got scheduled and who it's with. This is a bigger process than it sounds — it works from what you actually sent (not what's in your profile now, which may have moved), builds a set of stories with the facts pinned down, and runs a mock. Say yes to the mock; it's the part that actually helps.
+Say an interview got scheduled and who it's with. It works from what you actually sent (not what's in your profile now, which may have moved), builds a set of stories with the facts pinned down and a bank of questions organised by type, covers the money-and-timing questions no document carries, and runs a mock. Say yes to the mock; it's the part that actually helps.
+
+Don't skip it for lack of time. Ideally it runs the day before so it's fresh, but it flexes — an evening is comfortable and a couple of hours is enough. You already got the interview; that was the scarce part.
 
 ### …see where all my applications stand?
 

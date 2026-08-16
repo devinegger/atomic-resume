@@ -38,9 +38,11 @@ The trap here is preparing from your profile. What the interviewer is holding is
 
 The other thing people skip is the mock. It's the only part that tests delivery, and delivery is where prep usually fails.
 
+Unlike a deep dive, there's no *is it worth it* question here. You already got the interview — that was the scarce part.
+
 **Do this:** say an interview got scheduled and who it's with. Ask for [interview prep](../skills/prepare-for-interview.md). Do the mock.
 
-**Cost:** roughly half a day, and it splits across sittings comfortably.
+**When:** ideally the day before, so it's fresh. It flexes — an evening is comfortable, a couple of hours is enough, and it splits across sittings. If something needs looking up, start that part as soon as it's scheduled; rehearsal decays, lookups don't.
 
 ---
 
