@@ -80,6 +80,14 @@ Longer versions: [`docs/workflow.md`](docs/workflow.md) for the sequence, [`docs
 
 Paste the posting, or the link, and say you want to apply. The agent parses it, shows you how your background maps against what they're asking for, and tells you plainly whether it's worth the effort — sometimes the answer is no, and that's the feature.
 
+### …give one job everything I've got?
+
+Say the posting is worth a day, and the agent will run a deep dive instead of the normal loop.
+
+Most applications run on what your profile already knows. This one goes the other way: it works through the posting one requirement at a time, keeps asking until an answer couldn't be misread, and writes new material as it goes — the only part of the system that does that during an application rather than after it.
+
+Worth it for a job you'd genuinely move for. The payoff outlasts the application either way, because everything it uncovers is available to everything you apply to afterward, whether or not this one lands.
+
 ### …add something I forgot?
 
 Just say it. *"I also ran the vendor migration last year."* It'll ask a couple of questions and write it down properly.

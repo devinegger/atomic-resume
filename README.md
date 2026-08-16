@@ -98,6 +98,24 @@ Walking through what actually happens, using the fictional example in [`examples
 
 Read [`examples/README.md`](examples/README.md) for a guided tour, or just poke around the folder yourself.
 
+## More than one way through
+
+That loop is the common path and the one to learn first — a posting comes in, documents come out, and once your profile exists each one takes a few minutes.
+
+It isn't the only thing here. Ask for any of these in plain language; none of them need a command, and [`skills/README.md`](skills/README.md) is the full index if you'd rather see everything at once.
+
+**Spend a day on one posting instead of half an hour.** For the job you'd actually move for. The normal loop is built not to go looking — it asks only what your profile can't answer. This inverts that and digs, one requirement at a time, following up until an answer couldn't be misread. The argument for the cost is that atoms are permanent and applications aren't: everything it turns up is available to every posting afterward, so **even a rejection leaves you with a bigger profile.** See [`skills/run-a-deep-dive.md`](skills/run-a-deep-dive.md).
+
+**Get ready for the interview.** Roughly half a day, and a different job from building the resume — a document is read in six seconds and never argued with, and an interview is an hour of follow-up questions. It works from what you actually *sent*, which has usually drifted from your profile by then, pins down the facts behind each story so nothing gets assembled under pressure, covers the money-and-timing questions no document carries, and runs a mock. See [`skills/prepare-for-interview.md`](skills/prepare-for-interview.md).
+
+**See where everything stands.** Past six or so applications, *"which of these have I not heard back from"* stops being answerable by opening folders one at a time. See [`skills/build-a-tracker.md`](skills/build-a-tracker.md).
+
+**Keep the profile growing.** After an application goes out you get one question about what you learned. It's the only moment in the loop where the system gets smarter rather than just busier. See [`skills/maintain-profile.md`](skills/maintain-profile.md).
+
+**Start when nothing's written down.** If you have no old resume worth digesting, that's a normal starting point and there's a path for it. See [`skills/gather-source-material.md`](skills/gather-source-material.md).
+
+**Turn the caution up or down.** It runs in a forgiving mode by default. If it's still being fussier than you want — or you'd rather it pushed harder, which some people do after an interview goes badly on a detail — say so. See [`HELP.md`](HELP.md) → *make it stop being so fussy*. The one thing that doesn't move is whether a claim is supported by your own evidence.
+
 ## Folder map
 
 ```
