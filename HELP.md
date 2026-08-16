@@ -110,6 +110,10 @@ Say an interview got scheduled and who it's with. This is a bigger process than 
 
 Ask. It reads the logs and tells you, including which ones have gone quiet.
 
+Once you've got more than about six going, ask for a tracker — *"build me a tracker"* or *"can I see all of these in a table?"* If you're using Obsidian you'll get a live, sortable table with saved views; otherwise a plain one it rebuilds on request.
+
+One caveat it'll tell you too: **a tracker doesn't update itself.** It stays current because the agent updates it when you say what happened. If that lapses it doesn't go blank, it goes quietly wrong — and it still looks authoritative. The logs in each folder remain the real record.
+
 ### …stop for now?
 
 Just stop. Everything's written to files as you go. Come back whenever and say what you were doing.

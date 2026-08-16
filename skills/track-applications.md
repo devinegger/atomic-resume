@@ -24,6 +24,14 @@ Keep an honest record of what was sent, when, and what came back — so nothing 
 
 Even a posting declined after intake keeps `posting.md` and a one-line `log.md` saying why. Three months in, knowing what was declined and for what reason is real information about what they're actually looking for. It costs one line.
 
+### 1b. If a tracker exists, update it in the same breath
+
+If the folders have `status.md` files — meaning `skills/build-a-tracker.md` has run — **updating that file is part of logging, not a separate task.** Same moment, same conversation.
+
+⚠️ **The tracker does not update itself, and it fails silently.** Skip this and the table doesn't go blank — it keeps showing an application as `applied` that was actually rejected three weeks ago, and it still looks authoritative. **Nobody double-checks a table**, which is exactly why a stale one is worse than none.
+
+Both files get written, because they answer different questions: **`log.md` says what happened; `status.md` says where this stands.**
+
 ### 2. `log.md` is append-only
 
 Dated lines, never rewritten. If something turns out to be wrong, add a correcting line — don't edit history. The value of the log is that it records what was believed at the time.
@@ -44,7 +52,7 @@ That last line is the one that pays off later. A gap that predicted a rejection 
 
 ### 3. Summarize the state when asked
 
-Read every `log.md` and give a plain answer. No dashboard, no invented status vocabulary:
+Read every `log.md` and give a plain answer in their words. **Don't invent vocabulary to answer a question in chat** — "rejected after the screen" beats "status: closed-lost," and nobody needs a dashboard read aloud:
 
 > Six applications out.
 >

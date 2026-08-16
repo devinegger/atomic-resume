@@ -2,7 +2,7 @@
 name: prepare-for-interview
 description: Use as soon as an interview or screen is scheduled. Works from what was actually submitted, finds what has to hold up under questioning, and rehearses delivery — which is where prep usually fails.
 inputs: The submitted documents, profile/, the interviewer's name and function, and the person's time
-outputs: applications/<slug>/story-bank.md, a portable mock-interview prompt, and a one-page card for the day
+outputs: applications/<slug>/story-bank.md and question-bank.md, a portable mock-interview prompt, and a one-page card for the day
 ---
 
 # Prepare for an interview
@@ -189,11 +189,13 @@ Three shapes recur:
 
 ---
 
-## Phase 4 — Build a story bank, not a question bank
+## Phase 4 — The story bank
 
 **You cannot predict which question arrives. You can predict which stories are needed.**
 
-This is the correction to the obvious approach. A large tiered bank of predicted questions with scripted answers fails in a specific way: the interview turns out to be entirely behavioral, the two questions marked "near-certain" are never asked, two competency questions arrive that nothing anticipated — and the scripts were never the useful artifact anyway.
+So the stories are the primary artifact, and they get built first. A bank of predicted questions with *scripted answers* fails in a specific way: the interview turns out to be entirely behavioral, the two questions marked "near-certain" are never asked, two competency questions arrive that nothing anticipated — and the scripts were never portable anyway.
+
+**The questions still get built** — see Phase 4a, which follows. What fails is scripting them, not having them.
 
 ### The bank
 
@@ -219,11 +221,54 @@ This is the correction to the obvious approach. A large tiered bank of predicted
 
 ⛔ **Never let two atoms merge.** If two stories are adjacent enough to blur, flag the seam explicitly in the file.
 
-### Keep the questions — as practice prompts, never as scripts
+---
 
-The question list still earns its place, for one reason: **a question you've been made to answer once is a question you don't assemble live.** It feeds the mock in Phase 6.
+## Phase 4a — The question bank. Build this too.
 
-⛔ **It is not a set of answers to memorize**, and shorthand notes on predicted questions are wasted paper — they'll be holding a list of questions nobody asked.
+**Both files get built. They do different jobs and neither replaces the other.**
+
+The story bank holds **what you'll say** — the facts, fixed, so nothing gets assembled under pressure. The question bank holds **what you practice against** — so that on the day, no question is the first time you've had to produce an answer to it.
+
+The correction earlier in this file is about *scripting*, not about *questions*. A tiered bank of predicted questions with pre-written answers fails, because the interview is behavioral, the "near-certain" ones go unasked, and the scripts were never portable anyway. **The questions themselves are still worth every minute.** Said plainly by someone who'd skipped the practice and regretted it: *"the questions would have been helpful if I would have studied them. I think I need both."*
+
+Write `applications/<slug>/question-bank.md`.
+
+### Organize by type, not by likelihood
+
+**This is the fix for the failure above.** Ranking questions by how likely they are is the part that doesn't work — you can't predict which arrives. Grouping by *type* works, because a type you've rehearsed once transfers to every question in it.
+
+| Type | What it's testing | How many |
+|---|---|---|
+| **Tell me about yourself / why this role** | Whether there's a coherent narrative | 2–3 |
+| **Behavioral — a thing you did** | Ownership, and whether the story survives follow-up | 8–10 |
+| **Behavioral — a thing that went wrong** | Judgment, and whether they've reflected | 3–4 |
+| **Competency / technical for this role** | Whether they can do the job | 5–8, drawn from the posting's must-haves |
+| **Hypothetical — "how would you…"** | Approach, and whether they ask before answering | 3–4 |
+| **Logistics** | Money, timing, notice, travel | from Phase 3 |
+| **The gaps** | Whatever `fit-analysis.md` rated as a gap. **Every one gets a question** | as many as there are |
+
+**Pull the competency questions out of the posting's own language.** If a must-have says "partner with clinical stakeholders to translate requirements," the question is *"tell me about a time you translated requirements for a group that didn't share your vocabulary."* That's the question they will actually ask, in their words.
+
+### What goes next to each question
+
+**One line: which story answers it, and the single fact that has to be in the answer.** That's all.
+
+```markdown
+- **"Tell me about a time you had to say no to a stakeholder."**
+  → `quoting-tool-scope` · lead with: two competing use cases, shipped one first
+```
+
+⛔ **Do not write out the answer.** That's the thing that fails. A written answer gets half-memorized, comes out stilted, and collapses the moment the question is phrased differently — and the phrasing is always different.
+
+### Then make them answer each one, once, out loud
+
+**This is the entire value of the file**, and it's the part that gets skipped because it feels like homework.
+
+A question you've been forced to answer once is a question you don't assemble live. It doesn't need to be a good answer, and it doesn't need to be the answer they eventually give — it needs to have happened once already, so the interview isn't the first attempt. (See Phase 4b: nearly every strong answer is a second attempt, and in the room you only get one.)
+
+The practical way through it is the mock in Phase 6 — that's what the bank feeds. **Cover the types, not every question**, and prioritize: every gap question, every failure question, and two or three behavioral ones.
+
+⛔ **Don't print this file for the interview.** Shorthand notes on predicted questions are wasted paper — they'll be holding a list of questions nobody asked. **The one-page card in Phase 7 is what goes with them.** The question bank did its work beforehand.
 
 ---
 
@@ -265,7 +310,7 @@ It carries:
 
 1. **The interviewer persona** — name, title, background, and what they'd screen hardest on.
 2. **Voice rules, stated hard.** One question then stop · turns under about forty words · no lists, headers, or markdown · **never reference anything visual, they may be driving** · no coaching mid-interview.
-3. **The question pool**, mixed and interleaved by type rather than grouped.
+3. **The question pool from `question-bank.md`**, mixed and interleaved by type rather than grouped — deliberately not in the order they were practiced in.
 4. **Their real facts**, so follow-ups can be pointed — with an instruction *not to read them back*.
 5. **Anything unverified, marked unverified, with an instruction to test it hard.** This is how a mock surfaces what the prep missed.
 6. **A debrief spec** — strongest, weakest, where a claim didn't hold, and three fixes.
@@ -332,13 +377,16 @@ One page, for the day itself. **Everything on it is either something that must b
 - On a posting without a deep dive, every recorded gap was re-asked
 - Every `Note:` constraint is on the volunteer-first list
 - `story-bank.md` exists, with facts fixed and seams flagged
+- `question-bank.md` exists, organized by type, with every gap in `fit-analysis.md` represented — and they have answered a representative question from each type out loud at least once
 - The logistics block is answered, and every answer passed "can this be said as given?"
 - The mock ran, and the debrief came back
 - The one-page card exists, including the "know, don't say" items
 
 ## Common failure modes
 
-**Building a question bank and calling it prep.** The questions won't be the ones asked. Stories transfer; scripts don't.
+**Scripting answers to predicted questions.** The questions won't be the ones asked, and a written answer half-memorized comes out stilted and collapses when the phrasing changes. Stories transfer; scripts don't.
+
+**Skipping the question bank because the story bank exists.** They do different jobs. The stories fix the facts; the questions make sure no type of question is being attempted for the first time in the room.
 
 **Preparing knowledge and skipping delivery.** The material is usually fine. The sixty-second, result-first, number-in-the-first-sentence part is what fails, and it's the part that only rehearsal fixes.
 

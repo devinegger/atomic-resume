@@ -10,6 +10,7 @@ applications/
     resume.md           the tailored resume, written only after you approve it
     cover-letter.md     when there's one
     log.md              dated lines: applied, responses, outcome
+    status.md           current state, if you've asked for a tracker
     story-bank.md       if an interview gets scheduled — your stories, facts fixed
     mock-interview-prompt.md   a self-contained prompt for rehearsing out loud
   archive/              closed applications

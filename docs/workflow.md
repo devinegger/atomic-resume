@@ -63,6 +63,8 @@ Two things in it are easy to skip and shouldn't be. The **logistics block** — 
 
 **[`maintain-profile`](../skills/maintain-profile.md)** — adding an atom, adding a skill, promoting a better phrasing, or correcting a fact. Deliberately kept out of the per-application loop: a fact that isn't an atom yet isn't usable in the application that surfaced it, which is what keeps the truthfulness rule from collapsing under time pressure.
 
+**[`build-a-tracker`](../skills/build-a-tracker.md)** — once there are enough applications that reading the logs stops being a reasonable way to answer "where does everything stand." Logs are the right shape for history and the wrong shape for state, so this adds a small `status.md` per folder and builds a view over them — an Obsidian Base if they use Obsidian, a plain markdown snapshot otherwise. The trade gets stated before anything is built: it doesn't update itself, and a tracker that has drifted is worse than none, because nobody double-checks a table.
+
 **[`run-a-deep-dive`](../skills/run-a-deep-dive.md)** — wraps the whole per-application sequence when one posting is worth roughly a day instead of half an hour. Interviews the posting line by line rather than asking one bounded round of questions, checks the employer's other open roles, and verifies claims made *about the employer* as carefully as claims about the candidate. It's the one place new atoms are written during an application rather than after — licensed by the person's sustained attention, and revoked the moment the pace picks up. The reason to run it is that the atoms outlast the application: even a rejection leaves the profile permanently bigger.
 
 ---
