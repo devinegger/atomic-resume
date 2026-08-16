@@ -12,6 +12,20 @@ You'll keep using your own private career vault, and this repo is a sanitized fo
 4. **Update `examples/jordan-vale/`** if the change affects behavior a new user would actually see — a new skill, a changed template shape, a different default. The example should stay a faithful demonstration of the current system, not a snapshot of an old one.
 5. **Commit, with a message that describes the capability, not the personal context it came from.**
 
+### Don't let the cost become the headline
+
+A pattern worth naming, because three skills shipped with it before anyone noticed and it will recur: **what a skill costs is a caveat, not a feature.** Lead with what it does and who it's for; put the time at the end, where someone can weigh it once they know what they'd be getting.
+
+It happens for an understandable reason. In a private tool you already know why a skill exists, so the only thing worth writing down is the part that surprised you — which is usually how long it took. Ported straight across, that honest note lands in the first sentence a stranger reads, and the first thing they learn about a capability is its price.
+
+What it looked like in practice:
+
+- **The deep dive** opened with *"Spend a day on one posting"* — selling the duration as though it were the point.
+- **Interview prep** stated *"Roughly half a day"* directly beneath its own line saying there is no *is it worth it* test because the interview is already the scarce thing. The number was also wrong as a floor; two hours is enough.
+- **The tracker** leads with its maintenance obligation, which is correct and deliberate — that one is a genuine ongoing commitment someone should decline knowingly. The test isn't whether cost appears early, it's whether cost is doing the work of the purpose.
+
+So: state the cost honestly, keep it accurate, and don't put it where the purpose goes. A related failure is describing a skill by its duration in the index — *"worth a day rather than half an hour"* names no signal and tells a reader nothing about when to reach for it.
+
 ## Running the scrub check
 
 `scripts/scrub-check.sh` makes three passes, in decreasing order of certainty. Both it and `scrub-terms.txt` are gitignored — a list of exactly what to avoid saying is itself sensitive.

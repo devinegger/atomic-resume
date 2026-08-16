@@ -76,9 +76,25 @@ Longer versions: [`docs/workflow.md`](docs/workflow.md) for the sequence, [`docs
 
 ## How do I…
 
+These are individual tasks. If what you have is a *situation* rather than a task — nothing's landing, an interview got scheduled, you've been away for months — [`docs/use-cases.md`](docs/use-cases.md) starts from there instead and says what's usually going on underneath it.
+
 ### …apply to a job?
 
 Paste the posting, or the link, and say you want to apply. The agent parses it, shows you how your background maps against what they're asking for, and tells you plainly whether it's worth the effort — sometimes the answer is no, and that's the feature.
+
+### …go deeper on a posting I really want?
+
+Say so, and the agent will run a deep dive instead of the normal loop.
+
+**When it's the right call:** it's the job you want most, for whatever reason. That's the signal, and it's the whole justification for the extra time — if the day is what gets you the interview, you'll be glad you spent it.
+
+It pays off best when you also feel more qualified than your written record makes you look, because then the gap is in the record rather than in you, and this is what closes it. But that's what makes the day *productive* — it isn't what picks the posting. A job you don't especially want, where the profile is thin because the experience genuinely isn't there, is a long shot, and a long shot doesn't earn a day.
+
+Most applications run on what your profile already knows. This one goes the other way: it works through the posting one requirement at a time, keeps asking until an answer couldn't be misread, and writes new material as it goes — the only part of the system that does that during an application rather than after it.
+
+The payoff outlasts the application either way, because everything it uncovers is available to everything you apply to afterward, whether or not this one lands.
+
+**One caveat:** depending on how much the posting asks for, this can run a day or more. It's not something you'll have time for on every posting, and it's the wrong call in a week where you've got six things to get out — say so and the agent will scope it down or talk you out of it.
 
 ### …add something I forgot?
 
@@ -104,7 +120,9 @@ Ask. It'll also tell you when it thinks one isn't worth writing, which is most o
 
 ### …get ready for an interview?
 
-Say an interview got scheduled and who it's with. This is a bigger process than it sounds — it works from what you actually sent (not what's in your profile now, which may have moved), builds a set of stories with the facts pinned down, and runs a mock. Say yes to the mock; it's the part that actually helps.
+Say an interview got scheduled and who it's with. It works from what you actually sent (not what's in your profile now, which may have moved), builds a set of stories with the facts pinned down and a bank of questions organised by type, covers the money-and-timing questions no document carries, and runs a mock. Say yes to the mock; it's the part that actually helps.
+
+Don't skip it for lack of time. Ideally it runs the day before so it's fresh, but it flexes — an evening is comfortable and a couple of hours is enough. You already got the interview; that was the scarce part.
 
 ### …see where all my applications stand?
 

@@ -98,6 +98,26 @@ Walking through what actually happens, using the fictional example in [`examples
 
 Read [`examples/README.md`](examples/README.md) for a guided tour, or just poke around the folder yourself.
 
+## More than one way through
+
+That loop is the common path and the one to learn first — a posting comes in, documents come out, and once your profile exists each one takes a few minutes.
+
+It isn't the only thing here. Ask for any of these in plain language; none of them need a command, and [`skills/README.md`](skills/README.md) is the full index if you'd rather see everything at once.
+
+**If you'd rather start from your situation than from a list of capabilities**, [`docs/use-cases.md`](docs/use-cases.md) takes ten common ones — nothing's landing, an interview got scheduled, you've lost track of what you've sent — and says what's usually going on and what to ask for.
+
+**Go all in on the one you want most.** Whatever the reason — the work, the company, the money, the timing. **That's the whole signal**, and it's the justification for the time: if the extra day is what gets you the interview, you'll be glad you spent it. The normal loop is built not to go looking; this one inverts that and works through the posting a requirement at a time, following up until an answer couldn't be misread, writing down what surfaces. It pays off best when you feel more qualified than your profile makes you look, because then the gap is in the record rather than in you — but that's what makes the day productive, not what picks the posting. Whatever it turns up is available to every application afterward, so even a rejection leaves you with a bigger profile. Depending on the size of the posting it can take a day or more, so it isn't something to run on everything. See [`skills/run-a-deep-dive.md`](skills/run-a-deep-dive.md).
+
+**Get ready for the interview.** A different job from building the resume: a document is read in six seconds and never argued with, while an interview is an hour of follow-up questions and every number on the page is one waiting to be asked. It works from what you actually *sent*, which has usually drifted from your profile by then, pins down the facts behind each story so nothing gets assembled under pressure, covers the money-and-timing questions no document carries, and runs a mock. **This one always runs** — you already got the interview, and that was the scarce part. Best the day before, and it flexes: an evening is comfortable, a couple of hours is enough. See [`skills/prepare-for-interview.md`](skills/prepare-for-interview.md).
+
+**See where everything stands.** Past six or so applications, *"which of these have I not heard back from"* stops being answerable by opening folders one at a time. See [`skills/build-a-tracker.md`](skills/build-a-tracker.md).
+
+**Keep the profile growing.** After an application goes out you get one question about what you learned. It's the only moment in the loop where the system gets smarter rather than just busier. See [`skills/maintain-profile.md`](skills/maintain-profile.md).
+
+**Start when nothing's written down.** If you have no old resume worth digesting, that's a normal starting point and there's a path for it. See [`skills/gather-source-material.md`](skills/gather-source-material.md).
+
+**Turn the caution up or down.** It runs in a forgiving mode by default. If it's still being fussier than you want — or you'd rather it pushed harder, which some people do after an interview goes badly on a detail — say so. See [`HELP.md`](HELP.md) → *make it stop being so fussy*. The one thing that doesn't move is whether a claim is supported by your own evidence.
+
 ## Folder map
 
 ```
