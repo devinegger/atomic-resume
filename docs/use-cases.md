@@ -20,9 +20,11 @@ There's a second possibility worth saying out loud: sometimes it's the market, o
 
 ## "This posting is the one"
 
-It landed and your reaction was *I want this job* — and you feel qualified, whether or not your profile currently proves it.
+It landed and your reaction was *I want this job*. Whatever the reason — the work, the company, the money, the timing, something you can't quite put a finger on.
 
-That second half is the signal that matters. Feeling more qualified than your written record makes you look means the gap is in the record, not in you. That's the exact condition a deep dive fixes, and it's why the trigger isn't simply wanting the job.
+**That's the signal, and it's the entire justification for the time.** If the extra day is what gets you the interview, you'll be glad you spent it. Nobody else can make that call for you.
+
+It pays off best when you also feel more qualified than your profile makes you look, because then the gap is in the record rather than in you — but that's what makes the day productive, not what selects the posting. A wide gap on a job you don't especially want is a long shot, and a long shot doesn't earn a day.
 
 **Do this:** ask for a [deep dive](../skills/run-a-deep-dive.md) instead of the normal loop.
 

@@ -1,7 +1,7 @@
 ---
 name: run-a-deep-dive
-description: Use when a posting is worth an outsized amount of attention — roughly a day rather than half an hour. Excavates material the normal loop is designed not to go looking for.
-inputs: A posting worth the time, and the person's sustained attention
+description: Use on the posting they want most, whatever the reason. Excavates material the normal loop is designed not to go looking for, at a cost of roughly a day rather than half an hour.
+inputs: The posting they want most, and the person's sustained attention
 outputs: A tailored application, and — the actual point — a substantially larger profile that every future application draws on
 ---
 
@@ -9,7 +9,7 @@ outputs: A tailored application, and — the actual point — a substantially la
 
 ## Purpose
 
-Spend a day on one posting, and come out with a much bigger profile.
+Give the job they want most everything it's worth, and come out with a much bigger profile either way.
 
 This is a **modifier on the normal per-application loop**, not a replacement. Every skill in that sequence still runs and every rule still holds. What changes is how much attention each stage gets, and that new atoms are expected to come out of it rather than being deferred.
 
@@ -21,13 +21,20 @@ A normal application takes twenty to forty minutes and produces one tailored doc
 
 The cost is charged once. The return gets drawn on by every application afterward. Even if this particular posting goes nowhere — and it might — the excavation still paid, which is a thing almost nothing else in a job search can claim.
 
+⚠️ **That is what makes losing survivable. It is not what picks the posting.** Those are different jobs and conflating them sends someone to spend a day on a posting they don't care about, on the grounds that the atom yield would be good. See *When to invoke*.
+
 **The normal loop would not have found any of it, by design.** It asks only what the profile can't answer, in one bounded round, because that's correct when you're applying to a lot of things. A deep dive inverts the assumption: it treats the profile as incomplete, and treats the lines the posting cares most about as the place to dig.
 
 ## When to invoke
 
-- **The posting is genuinely high-fit and worth an outsized shot.**
-- ⚠️ **The profile is thin exactly where the posting is deep.** *This is the strongest single signal.* If the posting's core is three things the profile holds only as skills-line words with no stories behind them, that's the one. Not the posting they want most — the one where the gap between what they've done and what's written down is widest.
+⚠️ **They want this one more than the others.** ***This is the signal.*** Whatever the reason — the work, the company, the money, the location, the timing, something they can't fully articulate. It's the posting they'd be gladdest to get an interview for, and if the day buys that interview they'll be glad they spent it. That's a judgment only they can make, which is also why this skill is never invoked on your own initiative.
+
+Two things sharpen it. **Neither one selects the posting on its own:**
+
+- **They feel more qualified than their profile makes them look.** The best predictor of a *productive* dive. If the posting's core is three things the profile holds only as skills-line words with no stories behind them, there's a lot in there to find — the gap is in the record rather than in the person, and that's the gap digging closes.
 - **A stretch of their work has never been excavated.** Two years in a role that produced four atoms means there's more there.
+
+⛔ **A wide gap on its own is not the signal — that's a long shot.** A posting they don't especially want, where the profile is thin because the experience genuinely isn't there, does not become worth a day because digging would yield atoms. It yields atoms shaped around a job they don't want, which is the wrong day's work even when the atom count is high. Wanting it is what makes the day worth spending; the profile gap only decides how much the day returns.
 
 ## When not to
 

@@ -86,7 +86,9 @@ Paste the posting, or the link, and say you want to apply. The agent parses it, 
 
 Say so, and the agent will run a deep dive instead of the normal loop.
 
-**When it's the right call:** the posting resonates — *I want this job* — and you feel qualified for it, whether or not your profile currently backs that up. The second half is the real signal. If you feel more qualified than your written record makes you look, the gap is in the record rather than in you, and this is what closes it.
+**When it's the right call:** it's the job you want most, for whatever reason. That's the signal, and it's the whole justification for the extra time — if the day is what gets you the interview, you'll be glad you spent it.
+
+It pays off best when you also feel more qualified than your written record makes you look, because then the gap is in the record rather than in you, and this is what closes it. But that's what makes the day *productive* — it isn't what picks the posting. A job you don't especially want, where the profile is thin because the experience genuinely isn't there, is a long shot, and a long shot doesn't earn a day.
 
 Most applications run on what your profile already knows. This one goes the other way: it works through the posting one requirement at a time, keeps asking until an answer couldn't be misread, and writes new material as it goes — the only part of the system that does that during an application rather than after it.
 
