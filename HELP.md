@@ -80,13 +80,17 @@ Longer versions: [`docs/workflow.md`](docs/workflow.md) for the sequence, [`docs
 
 Paste the posting, or the link, and say you want to apply. The agent parses it, shows you how your background maps against what they're asking for, and tells you plainly whether it's worth the effort — sometimes the answer is no, and that's the feature.
 
-### …give one job everything I've got?
+### …go deeper on a posting I really want?
 
-Say the posting is worth a day, and the agent will run a deep dive instead of the normal loop.
+Say so, and the agent will run a deep dive instead of the normal loop.
+
+**When it's the right call:** the posting resonates — *I want this job* — and you feel qualified for it, whether or not your profile currently backs that up. The second half is the real signal. If you feel more qualified than your written record makes you look, the gap is in the record rather than in you, and this is what closes it.
 
 Most applications run on what your profile already knows. This one goes the other way: it works through the posting one requirement at a time, keeps asking until an answer couldn't be misread, and writes new material as it goes — the only part of the system that does that during an application rather than after it.
 
-Worth it for a job you'd genuinely move for. The payoff outlasts the application either way, because everything it uncovers is available to everything you apply to afterward, whether or not this one lands.
+The payoff outlasts the application either way, because everything it uncovers is available to everything you apply to afterward, whether or not this one lands.
+
+**One caveat:** depending on how much the posting asks for, this can run a day or more. It's not something you'll have time for on every posting, and it's the wrong call in a week where you've got six things to get out — say so and the agent will scope it down or talk you out of it.
 
 ### …add something I forgot?
 
