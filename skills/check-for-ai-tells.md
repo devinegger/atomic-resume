@@ -48,14 +48,22 @@ Flag every instance. None of these are banned outright, but each needs a reason 
 - **Perfect parallelism across a whole section.** Slight asymmetry reads human.
 - **Every section the same length.** Real experience isn't evenly distributed.
 
+⚠️ **Measure the whole document, not just the bullets.** This is the single easiest way to run this pass and still miss everything. Bullets are the obvious unit, so measurement tends to cover the experience section and nothing else — while the Summary, the highlights or career-highlights block, and the cover letter's paragraphs go unmeasured. Those are prose, they're written last, they're the most heavily tailored part of the document, and they are exactly where the tells live. A real run had four recurring findings survive several applications in a row for precisely this reason: every one of them was sitting in a section the measurement never looked at.
+
+**Every prose unit gets measured** — bullets, summary sentences, highlight lines, and cover-letter paragraphs — each as its own population. A summary that's three sentences of identical length is the same tell as eight bullets of identical length.
+
 **Measure, don't eyeball. All of this is plain text analysis — none of it needs a renderer or a browser, and it runs before the document is ever printed.** Actually count:
 
 ```
-per-bullet character count · min · max · spread · standard deviation ·
+per-unit character count · min · max · spread · standard deviation ·
 count of ", X, and Y" patterns · em-dash count · semicolon count
 ```
 
-Rough targets: **standard deviation above 20**, **spread above 60 characters**, **tricolons under a third of bullets**, **em-dashes and semicolons combined under three on a resume**. Heuristics, not laws — but a document failing all of them reads generated regardless of its vocabulary.
+Rough targets: **standard deviation above 20**, **spread above 60 characters**, **tricolons under a third of units**, **em-dashes and semicolons combined under three on a resume**. Heuristics, not laws — but a document failing all of them reads generated regardless of its vocabulary.
+
+⚠️ **The targets can fight each other. Chase one at a time.** Splitting one long multi-part bullet into two medium ones improves the tricolon ratio and *lowers* the standard deviation, because you just replaced an outlier with two values near the mean. Both numbers are pointing at real things and the fix for one degrades the other, which is how a pass turns into an afternoon of moving a metric back and forth.
+
+**The rule when they conflict: content wins over cadence.** Split the bullet if it's genuinely two facts — that's a truth-and-clarity decision and the spread number doesn't get a vote. Then re-measure and stop. Don't split a bullet you didn't need to split in order to move a statistic.
 
 **For a cover letter, also count total words against its format ceiling** — 325 for base, 500 for expanded (see the frontmatter of whichever template was used). Over the ceiling almost always means the letter is restating the resume; that's a finding on its own, not just a length problem. Report it the same way as any other tell:
 
@@ -79,6 +87,18 @@ Rough targets: **standard deviation above 20**, **spread above 60 characters**, 
 Would this person say this sentence to someone across a table? If it would sound absurd spoken, it reads absurd on the page.
 
 Then the harder test: **does this describe one person, or a category of person?** Cover the name at the top. If the document could belong to any competent person in that field, the problem isn't phrasing — it's that no specific fact survived the drafting.
+
+## When the same tell keeps coming back
+
+**A tell that survives three or more applications in a row isn't tailoring drift — it's in the base.**
+
+Tailoring introduces tells, which is why this pass runs last. But that also makes it easy to treat every finding as a fresh one and fix it in place, in this application, again. If you're flagging the same summary sentence or the same highlight line for the third time, the problem was never in the tailoring — it's sitting in the saved resume or the template that every application starts from, and patching the copy leaves the source untouched.
+
+**Fix it at the base instead**, so it stops arriving. That's a `skills/maintain-profile.md` job, not something to do mid-application — mention it, finish the application, and offer to fix the source afterward.
+
+Worth saying out loud when it happens, because it changes what the person should do:
+
+> This is the third time I've flagged that opening line. It's not coming from the tailoring — it's in your saved resume, so it'll keep showing up. Want me to fix it at the source after we send this one?
 
 ## Output format
 
@@ -105,6 +125,8 @@ Then they approve row by row, same as any change list.
 
 - All four passes have run
 - The structural measurements were taken, not estimated — including em-dash, semicolon, and (for a cover letter) word-count-vs-ceiling
+- **Measurement covered the summary and highlight sections, not only the bullets**
+- Anything flagged for the third time was named as a base problem, not patched again in place
 - Every number cross-checked against its atom
 - Findings presented as a list, approved row by row
 - Unresolvable tells flagged rather than papered over with synonyms
@@ -112,6 +134,12 @@ Then they approve row by row, same as any change list.
 ## Common failure modes
 
 **Skipping Pass 2.** Vocabulary is easy to check and structure is what actually gives a document away.
+
+**Measuring only the bullets.** The tells that survive longest are the ones in the summary, because the summary never gets counted.
+
+**Chasing two structural targets at once.** Splitting a bullet to fix the tricolon ratio lowers the standard deviation. Content wins, then re-measure, then stop.
+
+**Fixing the same tell for the third time.** If it keeps coming back it lives in the base document, and every fix you make here is a copy that gets thrown away.
 
 **Synonym swapping.** Replacing "leverage" with "utilize" achieves nothing. Replacing it with what actually happened achieves everything.
 

@@ -36,7 +36,7 @@ Work from `fit-analysis.md`. Decide, and be able to justify each choice:
 - **Which skills**, in the posting's words, ordered by the posting's priorities
 - **Whether the summary earns its place.** Cut it if it would only restate the experience below. A weak summary costs four lines and adds nothing
 
-Three to five bullets for recent and relevant roles, one or two for older ones. If an atom carries a `Use:` field, respect it — it isn't available unless the field says this situation is the exception.
+Three to five bullets for recent and relevant roles, one or two for older ones. If an atom carries a `Use:` field, follow it by default — but say you did, and offer it anyway (see *Offer what you're leaving off*). The field records a past judgment about presentation, and presentation is the person's call.
 
 ### 2. Fill the template
 
@@ -88,9 +88,30 @@ Rules:
 - **REWRITE rows show before and after in full.** Never "tightened the summary."
 - **Keep it under about ten rows.** More than that means you're rebuilding rather than tailoring, and path one is the honest way to do it.
 
-### 2. They approve row by row
+### 2. They approve
 
-They can accept, edit, or reject each one. Apply what's approved and nothing else.
+**In standard mode** (the default — see `AGENTS.md` → *Extraction modes*), show the change list and let a blanket answer stand. "Looks good" means all of it. Most rows are reorderings, cuts, and phrasing swaps, and making someone acknowledge eight of those individually is ceremony that teaches them to skim — which is worse than not asking, because then the rows that matter get skimmed too.
+
+**Two kinds of row always get called out on their own, in both modes:**
+
+- **Anything that changes a claim** — a REWRITE that alters what's being asserted, an ADD that puts a new assertion on the page, any row touching a number. Name these, and get a real answer on each.
+- **Anything you're proposing to cut that they've previously asked for.** Cutting it back out without saying so is how a document quietly reverts.
+
+**In strict mode**, every row gets its own answer.
+
+Apply what's approved and nothing else, in both modes.
+
+### 2b. Offer what you're leaving off
+
+**Don't drop an atom silently.** If something strong isn't going on the page — a `Use:` field says it belongs elsewhere, or it lost to length, or you judged it wouldn't land — say so in one line and let them overrule you:
+
+> I've left the internal-tooling project off. Its `Use:` note says it reads better as an interview answer than a bullet, and I think that's right for this posting. Say the word and it goes on.
+
+**If they want it on the page, put it on the page.** A `Use:` field is a note from a past conversation, not a rule they signed. They know something you don't about this application — who's reading it, what was said on a call, whether the note still reflects what they think. Presentation is their call; see `AGENTS.md` → *Whose call is it*.
+
+**In strict mode**, respect the field without the offer — that's what the person opted into.
+
+**What doesn't change in either mode:** a `Note:` field constraining *how* something is claimed still holds, always. "Designed it, didn't write the code" isn't a presentation preference — it's the fact. They can put the atom on the page; they can't put it there in a form that says something untrue.
 
 ### 3. Write on approval
 
@@ -107,6 +128,8 @@ Count. A markdown draft is roughly a page per 450–500 words of content, but th
 If base is overflowing: cut the weakest atom or switch a Long to a Short. Do not shrink type or margins. If it's still overflowing after two cuts, say so and offer expanded:
 
 > This is running about a page and a quarter. I can cut the two oldest bullets, or we can switch to the two-page format. What would you rather?
+
+Offer, then take their answer — including "leave it long and I'll deal with it at print." **In strict mode**, anything added has to be paid for by something cut, and the page budget isn't negotiable.
 
 ### Run the tells pass
 
@@ -126,7 +149,8 @@ Then `skills/draft-cover-letter.md` if one is in scope, and `skills/render-docum
 
 - `applications/<slug>/resume.md` exists and every line traces to an atom or to `master.md`
 - The person approved before it was written
-- Nothing on the page contradicts a `Note:` or ignores a `Use:` field
+- Nothing on the page contradicts a `Note:` field
+- Anything left off because of a `Use:` field was named and offered, not dropped quietly
 - No gap from the fit analysis has become a claim
 - The tells pass has run
 - `log.md` updated
@@ -139,7 +163,9 @@ Then `skills/draft-cover-letter.md` if one is in scope, and `skills/render-docum
 
 **Presenting a rewritten document instead of a change list.** They will accept it wholesale, and neither of you will know what changed.
 
-**Ignoring a `Use:` field** because the atom is strong and the posting is close. The field exists because the person or a prior session decided this doesn't belong on a page.
+**Overriding a `Use:` field on your own initiative** because the atom is strong and the posting is close. Follow the field by default — then say what you left off and let them decide. What's not allowed is the silent version in either direction: quietly including it, or quietly dropping it and never mentioning it existed.
+
+**Treating a `Note:` field as negotiable.** It isn't. `Use:` is about where something belongs; `Note:` is about what's true. The person can overrule the first and cannot overrule the second.
 
 **Padding to fill a second page.** If base overflows by two lines, cut two lines. If expanded has half a page of white space, it should have been base.
 

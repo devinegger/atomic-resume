@@ -10,7 +10,10 @@
     --rule: #333;
     --base-size: 10.5pt;
     --line-height: 1.35;
-    --page-margin: 0.6in 0.7in;
+    --page-margin-v: 0.6in;
+    --page-margin-h: 0.7in;
+    --page-margin: var(--page-margin-v) var(--page-margin-h);
+    --content-per-page: calc(11in - (var(--page-margin-v) * 2));
   }
 
   @page {
@@ -39,11 +42,23 @@
     padding: var(--page-margin);
     background: #fff;
     box-shadow: 0 0 0.12in rgba(0,0,0,0.18);
+    /* Screen-only page ruler. Marks where the paper would break: the
+       interval is one page of CONTENT (11in less the top and bottom
+       margins), measured from the content box. Removed in @media print. */
+    background-origin: content-box;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent calc(var(--content-per-page) - 1px),
+      rgba(190, 60, 60, 0.4) calc(var(--content-per-page) - 1px),
+      rgba(190, 60, 60, 0.4) var(--content-per-page)
+    );
   }
 
   @media print {
     html, body { background: #fff; }   /* html too — it paints the canvas */
     .page {
+      background-image: none;
       margin: 0;
       padding: 0;
       max-width: none;

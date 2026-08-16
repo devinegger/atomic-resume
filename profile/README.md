@@ -41,6 +41,26 @@ The one thing worth keeping intact is the field structure. `**Long:**`, `**Metri
 
 **Adding to this folder is deliberate.** New atoms get added in their own step, in conversation, with the details captured properly — not in the middle of building a resume that would benefit from them. Anything added mid-application is available for the *next* one.
 
+## What's your call, and what isn't
+
+Worth being clear about, because it's the thing most likely to feel annoying:
+
+**Yours.** Whether something goes on the page. Whether a bullet reads well. Whether an accomplishment is worth the space, or sounds like bragging, or belongs in this particular application. If the agent leaves something off and you want it on, say so and it goes on. It doesn't get a vote on your taste.
+
+**Not yours, and not the agent's either.** Whether a claim is true. If you ask for something the profile doesn't support, you'll get a no and an explanation of what's missing — and an offer to write down the real version first, which usually takes about a minute. That's the one thing this system won't bend on, and it's the reason it's worth using at all.
+
+## If it's being too picky
+
+The agent runs in **standard mode** unless you tell it otherwise, which is the more forgiving of two settings. If it's still refusing to write things down, being fussy about numbers you don't have, or asking whether you *really* did something — tell it. That's not how standard mode is supposed to feel, and saying so is enough.
+
+There's also a **strict mode**, for people who want the extra friction — usually after an interview went badly on a detail. It rejects thin material instead of recording it, asks for approval line by line, and pushes harder on unmeasured numbers. Turn it on by asking the agent to, or by adding this line near the top of `master.md`:
+
+```
+Extraction mode: strict
+```
+
+Delete the line to go back. Neither mode will ever put something on your resume that isn't true — that part isn't a setting.
+
 ## Privacy
 
 Gitignored. This folder never leaves your machine, even if you push this repo somewhere.

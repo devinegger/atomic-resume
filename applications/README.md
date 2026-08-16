@@ -10,7 +10,9 @@ applications/
     resume.md           the tailored resume, written only after you approve it
     cover-letter.md     when there's one
     log.md              dated lines: applied, responses, outcome
-    interview-prep.md   if one gets scheduled
+    status.md           current state, if you've asked for a tracker
+    story-bank.md       if an interview gets scheduled — your stories, facts fixed
+    mock-interview-prompt.md   a self-contained prompt for rehearsing out loud
   archive/              closed applications
 ```
 
@@ -22,7 +24,7 @@ Three months in, that's real information. The pattern in what you turned down te
 
 ## What's in each file
 
-**`posting.md`** keeps the posting **verbatim** at the top, then what it's asking for underneath: must-haves, nice-to-haves, the keywords in their own words, an honest read of what seniority the role actually is, and any red flags. Postings get taken down and quietly edited; this copy is the record of what you actually applied to.
+**`posting.md`** keeps the posting **verbatim** at the top, then what it's asking for underneath: must-haves, nice-to-haves, the keywords in their own words, the level the posting *states* — quoted, not rated — how the posting actually accepts an application, and any red flags. Postings get taken down and quietly edited; this copy is the record of what you actually applied to.
 
 It also holds the skill table — the top ten to fifteen things the posting wants, each marked as something you have, something adjacent, or a gap. That table is usually the most useful thing produced in the whole intake, and you'll see it in chat as well.
 

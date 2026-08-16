@@ -22,7 +22,15 @@
     --rule: #333;
     --base-size: 10.5pt;
     --line-height: 1.35;
-    --page-margin: 0.6in 0.7in;
+
+    /* Page geometry. The vertical margin is its own variable because the
+       screen page ruler below is derived from it — a printed page is 11in
+       tall, but it only holds (11in - top - bottom) of actual content.
+       Change --page-margin-v and the ruler stays correct. */
+    --page-margin-v: 0.6in;
+    --page-margin-h: 0.7in;
+    --page-margin: var(--page-margin-v) var(--page-margin-h);
+    --content-per-page: calc(11in - (var(--page-margin-v) * 2));
   }
 
   @page {
@@ -51,7 +59,51 @@
     padding: var(--page-margin);
     background: #fff;
     box-shadow: 0 0 0.12in rgba(0,0,0,0.18);
+
+    /* Screen-only page ruler — see the note below.
+       Measured from the CONTENT box, not the padding box, and repeating
+       every --content-per-page. Both of those matter; see below. */
+    background-origin: content-box;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent calc(var(--content-per-page) - 1px),
+      rgba(190, 60, 60, 0.4) calc(var(--content-per-page) - 1px),
+      rgba(190, 60, 60, 0.4) var(--content-per-page)
+    );
   }
+
+  /* ----------------------------------------------------------
+     The page ruler, on screen only.
+
+     A faint line marks where the paper would break, so you can see
+     a document going long without printing anything. Content
+     crossing the first line means two pages; crossing the second
+     means three, which is usually a surprise and always worth
+     knowing before you hit print.
+
+     Two things here are easy to get wrong, and getting either one
+     wrong makes the ruler worse than useless — it reports one page
+     while you are already onto the second:
+
+     1. The interval is NOT 11in. A sheet is 11in tall, but @page
+        takes --page-margin-v off the top and bottom, so one page
+        only carries (11in - 2 × margin) of content. That is what
+        --content-per-page computes.
+
+     2. The origin is the CONTENT box, not the padding box. The
+        default (padding-box) would start the first line a full
+        margin above where the text actually begins, shifting every
+        line down the page.
+
+     It is still a guide, not an oracle — real breaks depend on the
+     browser, the fonts, and the paper size, and a block with
+     break-inside: avoid gets pushed whole rather than split. Use it
+     to catch a regression early; use your own print preview to
+     decide anything.
+
+     `@media print` removes it, so it can never reach a PDF.
+     ---------------------------------------------------------- */
 
   @media print {
     html, body { background: #fff; }   /* html too — it paints the canvas */
@@ -60,6 +112,7 @@
       padding: 0;
       max-width: none;
       box-shadow: none;
+      background-image: none;          /* no rulers on paper, ever */
     }
     .no-print { display: none !important; }
   }

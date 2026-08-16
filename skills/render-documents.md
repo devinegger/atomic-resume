@@ -83,9 +83,19 @@ That third one is the important one if the target is an applicant tracking syste
 
 **Never do this checking for them by generating a PDF yourself.** There's no renderer in this system on purpose — see [`docs/rendering.md`](../docs/rendering.md) → *Export policy*. If they don't want to check it themselves, say the checklist takes about a minute and ask again; don't route around it by producing the PDF.
 
+**Optional: catch a page-count regression before it reaches them.** If you have a way to view the rendered page — a browser tool, a preview pane, anything that shows the HTML laid out — the print shell draws a screen-only rule at each page boundary. Serving the file locally and looking at where that rule falls answers "is this still one page?" without simulating a print engine and without producing a PDF.
+
+This is a **pre-check, not a replacement.** The person's own print preview is still the answer that counts, because their browser, fonts, and paper size are the ones that matter. What this buys is catching the case where an edit quietly pushed a two-page resume to three — which the person would otherwise find at print time, after they thought they were done. If you don't have a way to view it, skip this and go straight to their checklist; nothing downstream depends on it.
+
 ### 5. Fix problems at the source
 
 **Slightly over a page.** Cut content — a weak bullet, or a Long atom switched to Short. Only after that, nudge `--base-size` down to 10pt or `--line-height` to 1.3 in the shell. Never below 10pt: it reads as desperate and some readers can't comfortably read it.
+
+⚠️ **Cut whole lines, not characters.** Trimming a bullet from 148 characters to 121 feels like progress and buys **nothing** if the bullet still wraps to the same number of lines. The page only moves when a line disappears. Before trimming, look at where the text actually wraps and ask what it would take to drop a line — sometimes that's four words, sometimes it's a whole clause, and sometimes the honest answer is that this bullet can't lose one and a different bullet has to go.
+
+⚠️ **When a role block straddles the page break, trim the line *above* it.** The block isn't too tall — it's being pushed. Recovering a single line anywhere earlier on the page pulls the whole block up, and that's usually far less destructive than cutting inside the block that's actually splitting. Look up the page, not at the problem.
+
+**On a skills line, more items per line beats a tidy-looking line.** A skills line that wraps to a second line holding three items is wasting most of that line. Fitting more items onto the first line — even if it looks dense — puts more true claims in the same vertical space. Don't chase a perfectly full last line, though; past a point you're rearranging for no gain.
 
 **A role splits across pages.** Check the `<div class="role">` wrapper is there. If it is and the block is simply too tall, cut a bullet or reorder.
 

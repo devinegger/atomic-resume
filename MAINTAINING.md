@@ -14,25 +14,36 @@ You'll keep using your own private career vault, and this repo is a sanitized fo
 
 ## Running the scrub check
 
-`scripts/scrub-check.sh` does a case-insensitive search across the whole repo for every term in `scrub-terms.txt`. Both files are gitignored — the denylist itself never gets published, since a list of exactly what to avoid saying is itself sensitive.
+`scripts/scrub-check.sh` makes three passes, in decreasing order of certainty. Both it and `scrub-terms.txt` are gitignored — a list of exactly what to avoid saying is itself sensitive.
 
 ```bash
 ./scripts/scrub-check.sh
 ```
 
-Run it before every push, not just the first one. It's cheap and it catches the mistake where a real name or a real employer slips into a new example or a new skill file.
+1. **Denylist** — every term in `scrub-terms.txt`. Terms above the `=== WARN ===` line fail the run; terms below it only warn, because they're real *and* ordinary English. A term prefixed with `=` matches whole words only, which is what stops a short company name from firing on every word that happens to contain it.
+2. **Patterns** — shapes rather than names: absolute `/Users/…` paths, real email addresses, real phone numbers. These catch leaks that were never on anyone's list. Values that are obviously reserved-for-documentation (`@example.com`, `555` numbers) are excluded per *value*, not per line — a real number sitting on the same line as a placeholder still fails. Money figures only warn, since the fixtures carry invented ones on purpose and a real one looks identical.
+3. **Proper-noun sweep** — capitalized multi-word tokens in `skills/`, `docs/`, `templates/`, and the root docs that aren't on the fixture allowlist. Warns only. `examples/` is deliberately excluded; it's a reviewed set of invented names and sweeping it buries the signal. **This is the pass that catches an employer name nobody thought to add**, which is the exact failure described below.
 
-If it comes back with hits, look at each one — it may be a real leak, or it may be a false positive (a denylist term that happens to also be a common English word). Fix real leaks; don't just suppress false positives by loosening the check.
+There's a **`.git/hooks/pre-push`** that runs the check and blocks the push if it fails. Hooks aren't cloned, so nobody who forks the repo inherits it. Reinstall it if you ever re-clone — the file is small and the failure mode of not having it is silent.
+
+If it comes back with hits, look at each one. Fix real leaks. If something is a genuine false positive, **narrow the term** (add `=` for whole-word matching, or make it more specific) or move it below the `=== WARN ===` line — don't delete it and don't loosen the check to make it quiet.
 
 ## Keeping the denylist current
 
-`scrub-terms.txt` needs a new line whenever:
+**`scrub-terms.txt` is derived, not hand-maintained.** This matters, and it's the lesson of the 2026-08-14 rebuild: the original list was written on 2026-07-31 against the repo's source material as it stood that day. It covered two employers, because two applications existed. Ten weeks later there were thirty-six, and the private skills being considered for porting named two of the missing ones **fifty-five times between them**. The check passed the whole time. A hand-maintained denylist decays silently, and it decays fastest exactly when you're busiest — which is also when you're most likely to push.
 
-- You start a new role, so a new employer name enters the picture
-- A new project, product, or internal system name shows up in your own material
-- You notice a term specific enough to your workplace that a coworker would recognize it, even if it seems generic in isolation
+So re-derive it rather than topping it up. The sources:
 
-When in doubt, add it. A denylist with a stray false positive costs you a few seconds reviewing a `scrub-check.sh` hit. A denylist missing a real term costs a coworker recognizing your employer's internal tool name in a document you handed them.
+- every application folder name, and the `company`, `source`, and `platform` fields in each one's tracking file
+- the profile's master record — employers, schools, certifications, locations
+- the skills and achievements files — project, system, vendor, and internal-tool names
+- a proper-noun sweep of your own private skill files, for anything capitalized that isn't ordinary English
+
+Re-derive whenever you've done a batch of applications, before any port, and any time you're about to push after a gap. It takes a few minutes and it's the only step here that can't be recovered after the fact.
+
+**What not to put on it:** ordinary industry vocabulary. Jira, SharePoint, Figma, Scrum, and their kin are not identifying on their own, and a denylist that fires on every run is a denylist that stops being read. If a combination of generic tools would fingerprint your workplace, that's a judgment call for the proper-noun sweep and your own eyes, not a literal term.
+
+When in doubt about an actual name, add it. A stray false positive costs a few seconds. A missing term costs a coworker recognizing your employer's internal tool name in a document you handed them.
 
 ## Versioning the templates
 

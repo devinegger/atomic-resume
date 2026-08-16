@@ -24,6 +24,14 @@ Keep an honest record of what was sent, when, and what came back — so nothing 
 
 Even a posting declined after intake keeps `posting.md` and a one-line `log.md` saying why. Three months in, knowing what was declined and for what reason is real information about what they're actually looking for. It costs one line.
 
+### 1b. If a tracker exists, update it in the same breath
+
+If the folders have `status.md` files — meaning `skills/build-a-tracker.md` has run — **updating that file is part of logging, not a separate task.** Same moment, same conversation.
+
+⚠️ **The tracker does not update itself, and it fails silently.** Skip this and the table doesn't go blank — it keeps showing an application as `applied` that was actually rejected three weeks ago, and it still looks authoritative. **Nobody double-checks a table**, which is exactly why a stale one is worse than none.
+
+Both files get written, because they answer different questions: **`log.md` says what happened; `status.md` says where this stands.**
+
 ### 2. `log.md` is append-only
 
 Dated lines, never rewritten. If something turns out to be wrong, add a correcting line — don't edit history. The value of the log is that it records what was believed at the time.
@@ -44,7 +52,7 @@ That last line is the one that pays off later. A gap that predicted a rejection 
 
 ### 3. Summarize the state when asked
 
-Read every `log.md` and give a plain answer. No dashboard, no invented status vocabulary:
+Read every `log.md` and give a plain answer in their words. **Don't invent vocabulary to answer a question in chat** — "rejected after the screen" beats "status: closed-lost," and nobody needs a dashboard read aloud:
 
 > Six applications out.
 >
@@ -52,7 +60,7 @@ Read every `log.md` and give a plain answer. No dashboard, no invented status vo
 > - **Meridian Freight** — recruiter screen Thursday
 > - **Vantage Systems** — applied 02-20, nothing yet, twelve days
 > - **Harbor Point Analytics** — applied 02-27, nothing yet
-> - **Lakeside Supply** — passed on it, seniority was two levels below you
+> - **Lakeside Supply** — passed on it, you said the level was wrong
 > - **Trellis Data** — captured, not applied yet
 >
 > Vantage is the one going quiet. Twelve days without a response is usually a no, though not always.
@@ -63,11 +71,35 @@ Roughly two weeks without a response is the point where an application is probab
 
 > Vantage is at twelve days with no response. That's usually a no. Some people follow up once at this point; some don't bother. Either's reasonable.
 
-### 5. Archive on close
+### 5. "Passed on it" and "on hold" are different things
 
-Offer accepted, rejected, or gone cold for a month or more → move the folder to `applications/archive/`. Keep everything; the archive is a record, not a bin.
+Both mean *not applying right now*, and collapsing them loses the only part that matters later.
 
-### 6. Watch for recurring gaps
+**Passed** — the door is shut. Not interested, wrong role, wrong company, bad terms. Log the reason and archive it. It's done.
+
+```markdown
+- 2026-02-18 — Passed. Fully onsite five days, and that's a hard no.
+```
+
+**On hold** — still wanted, blocked on something **they control and intend to finish**. This is not the same as waiting to hear back, and it's not a soft no.
+
+```markdown
+- 2026-02-18 — On hold until the certification exam in April. They ask for
+  it explicitly and applying before it's done wastes the shot.
+```
+
+⚠️ **A hold has to name what unblocks it.** "Waiting" is not a hold reason. "Until the exam in April" is. Without that, a hold decays into a posting nobody remembers declining — it sits in the folder looking live, gets skipped every time the list is reviewed, and eventually the posting closes with nobody having decided anything.
+
+Two consequences for how you report:
+
+- **A hold is live pipeline, not a closed one.** Don't archive it, and don't leave it out of the summary — it belongs in the list with its unblocking condition visible, so the person sees it every time they look.
+- **A hold that never got unblocked is worth one mention.** If the thing that was supposed to unblock it has come and gone, say so once: *"The April exam was the hold on Riverbend — that's passed now. Still want it?"* Then drop it.
+
+### 6. Archive on close
+
+Offer accepted, rejected, passed on, or gone cold for a month or more → move the folder to `applications/archive/`. Keep everything; the archive is a record, not a bin. **Holds don't get archived** — see above.
+
+### 7. Watch for recurring gaps
 
 When the same gap appears in three or more postings, say it once:
 
@@ -78,6 +110,26 @@ Then stop. Whether to do anything about it is entirely theirs, and unsolicited c
 Same for the opposite signal — if one atom keeps carrying the application, that's worth knowing:
 
 > The carrier scorecard has been the lead item in five of six applications. It's doing a lot of work for you.
+
+### 8. Ask the one maintenance question, at the moments it's actually answerable
+
+This is how the system learns. There's no scheduled maintenance here and no queue to drain later — a folder of markdown has nothing to fire a reminder, so a cadence would just be a promise nobody keeps. Instead the question gets asked at the two moments the answer actually exists.
+
+**After an application goes out**, once:
+
+> Anything come up while we were building that which isn't in your profile yet? A number you remembered, a project I didn't have, a better way of saying something.
+
+**After a rejection or an interview**, the same question aimed at what the conversation surfaced:
+
+> Anything they asked about that your profile didn't have a good answer for?
+
+If they say yes, **do it now, in this conversation.** Go to `skills/maintain-profile.md` and make the change. There's no reason to defer — the application is already sent, so the rule that protects it no longer applies, and a fact deferred is a fact lost.
+
+If they say no, that's the whole step. Don't push, don't ask twice, and don't turn it into a review.
+
+⚠️ **This is the one moment the profile gets better.** Skip it every time and the system stays exactly as good as the day the inbox was digested, which is the failure mode of every well-organized set of notes anyone has ever abandoned.
+
+**Not before the application goes out.** During tailoring, a noticed fact gets mentioned and left alone — see `AGENTS.md`. That isn't bureaucracy: a fact that isn't an atom yet isn't usable in the application that surfaced it, and adding it mid-build is the truthfulness rule collapsing on itself. Afterward, it's just an improvement.
 
 ## Questions to ask
 
@@ -90,8 +142,10 @@ Same for the opposite signal — if one atom keeps carrying the application, tha
 - Every application folder has a current `log.md`
 - Submitted dates are recorded
 - Outcomes recorded, including rejections
+- Holds name what unblocks them, and are still in the live list
 - Closed applications archived
 - Recurring gaps counted and mentioned once
+- The maintenance question was asked after the application went out
 
 ## Common failure modes
 
@@ -104,3 +158,7 @@ Same for the opposite signal — if one atom keeps carrying the application, tha
 **Turning a recurring gap into a lecture.** Say the count once.
 
 **Losing the folders of postings they passed on.** Those are data about what they're actually looking for.
+
+**Recording a hold with no unblocking condition.** "Waiting" isn't one. A hold that doesn't say what ends it becomes a posting nobody ever decided about.
+
+**Skipping the maintenance question.** It's one question, it takes ten seconds, and it's the only step in the entire system where the profile gets better after the initial digest. Skip it every time and the whole thing quietly stops learning.

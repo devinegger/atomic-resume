@@ -46,6 +46,23 @@ A partial is the most dangerous rating, because it's the one that quietly become
 
 Now the constraint travels with the requirement instead of living in your head.
 
+### 2b. Ask the "unaided?" question here, if it hasn't been asked
+
+**This is the moment it matters.** A skills line is a claim about what someone can do without help, and a technical screen tests it that way. So before a technology goes onto a skills line — or into a bullet that implies they built the thing themselves — check whether it's theirs.
+
+Look at the atom first. If it carries a `Note:` recording that the work was designed and directed rather than personally implemented, you already have the answer and you don't ask again. **In standard mode the question is deferred to here on purpose** — asked during extraction it lands as *did you really do that?*, while asked here it's obviously practical:
+
+> Quick one before I put SQL on the skills line: is that something you write yourself, or something you've directed and reviewed? Both are fine — it just changes whether it goes on the skills line or stays in the bullet as something you built.
+
+Then hold the distinction:
+
+- **The accomplishment is theirs either way.** They decided what it should do, drove it to working, and own the outcome. The atom stands and the bullet stands.
+- **The implementation language does not go on the skills line** if they couldn't write it unaided. That's not a judgment about them; it's about what a screen will test.
+
+Record the answer as a `Note:` on the atom so nobody asks a third time, and so it survives into the interview prep, where volunteering the distinction unprompted is a strength rather than a confession.
+
+⚠️ **This check happens in both modes.** Strict asks it earlier; standard asks it here. Neither skips it — the whole point of deferring it was to ask it at a better moment, not to lose it.
+
 ### 3. Name the gaps without softening
 
 Gaps are useful. They tell the person what to address in the cover letter, what's coming in the interview, and what to learn next.

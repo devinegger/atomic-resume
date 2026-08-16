@@ -3,7 +3,8 @@
 # Log — Copperline Health, Product Analyst
 
 - 2026-02-12 — Captured from Copperline Health careers page (example). Posting saved verbatim.
-- 2026-02-12 — Skill intersection run: 6 of 7 must-haves ✅ direct or variant, 1 partial (presenting to clinical stakeholders specifically), 2 of 3 nice-to-haves gaps (healthcare domain, HIPAA). Seniority reads correct for level — no mismatch. Verdict: apply.
+- 2026-02-12 — Apply mechanism: employer ATS, direct upload. Tailored documents can be delivered.
+- 2026-02-12 — Skill intersection run: 6 of 7 must-haves ✅ direct or variant, 1 partial (presenting to clinical stakeholders specifically), 2 of 3 nice-to-haves gaps (healthcare domain, HIPAA). Stated band recorded and shown to Jordan; they confirmed it reads right for what they're targeting. Verdict: apply.
 - 2026-02-12 — `fit-analysis.md` written. Lead argument: the carrier scorecard maps closely to the posting's core requirement (messy operational data → decision-ready reporting that drives real decisions).
 - 2026-02-13 — Format chosen: resume-base (one page — under 10 years of history, strongest material fits comfortably) and cover-letter-expanded (the healthcare gap needs its own paragraph, which the base format doesn't have room for).
 - 2026-02-13 — Phase: resume assembled from `resume-base.md`. Approved with one change — moved the freight-audit bullet above the invoice-queue bullet, since it maps to a must-have (root-cause analysis) rather than an implied one.

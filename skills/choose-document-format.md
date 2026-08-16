@@ -15,11 +15,19 @@ This is a separate skill rather than a line inside assembly because it's a step 
 
 ## When to invoke
 
-Every time, immediately before:
+Immediately before:
 - `skills/assemble-resume.md`
 - `skills/draft-cover-letter.md`
 
 Both documents get their own choice. A one-page resume with an expanded cover letter is a perfectly normal combination.
+
+**Ask properly the first two or three times. After that, carry the last choice forward and just say what you're doing.**
+
+Once someone has made this call a few times they know the difference, and asking again in full is ceremony that teaches them to skim — a real cost, because the questions that genuinely need attention come later in the same conversation. Default to what they chose last time, in one line they can wave off:
+
+> Going with the one-page version again unless you'd rather go expanded.
+
+**Ask in full anyway when something has changed:** the posting is in a different field or at a different level from their recent ones, it clearly wants more detail than usual, or their last few documents have been running long. A changed situation earns the full question. The tenth near-identical application doesn't.
 
 ## Procedure
 

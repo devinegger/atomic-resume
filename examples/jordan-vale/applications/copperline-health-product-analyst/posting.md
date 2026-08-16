@@ -71,8 +71,17 @@ We're looking for a Product Analyst to join our Care Access product team.
 **Keywords (their words)**
 Product Analyst · usage and operations data · friction points · reporting dashboards · root-cause analysis · decision-ready reporting · clinical operations
 
-**Seniority signal**
-Mid-level. "3+ years," no people-management language, "support root-cause analysis" rather than "own" it. Comp band ($78–92K) is consistent with mid-level analyst work. Matches Jordan's actual level well — no mismatch either direction.
+**Stated band — recorded, not rated. ASK JORDAN.**
+- Title: "Product Analyst," no modifier.
+- Experience floor: "3+ years."
+- Comp band: $78,000–$92,000, stated.
+- Direct reports: not mentioned.
+- Responsibility verbs, quoted: "support root-cause analysis," "build and maintain," "present findings."
+- Supervision language: none either way.
+
+No judgment recorded on whether this is a step up, lateral, or reach — that depends on Jordan's market and where they sit today, neither of which is visible from here.
+
+**Apply mechanism:** Employer ATS (Greenhouse), direct upload of resume and cover letter. A tailored document can be delivered.
 
 **Compensation:** $78,000–$92,000, stated.
 
