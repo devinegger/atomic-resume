@@ -186,6 +186,8 @@ To update, tell your agent **"update this repo."** It'll work out which kind of 
 
 If you'd rather do it by hand: `git pull` in the folder, if you cloned it.
 
+**Already have an older downloaded copy?** Clone a fresh one and have your agent move your data across — say *"I'm migrating from an older downloaded copy at `<path>`."* It's five minutes, once, and every update after that is a single command. See [`HELP.md`](HELP.md) → *…update my copy?*, and do let the agent handle the move: a downloaded folder holds that version's shipped files alongside your own, and copying it across by hand quietly rolls the templates back.
+
 ## The truthfulness contract
 
 The agent can only recombine, re-emphasize, and rephrase facts you've given it. It cannot invent or inflate an employer, a title, a date, a degree, a tool, a metric, or an outcome. If a posting wants something you don't have, it will say so and offer honest options — never quietly manufacture a match.
