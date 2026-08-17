@@ -7,6 +7,22 @@ outputs: applications/<slug>/story-bank.md and question-bank.md, a portable mock
 
 # Prepare for an interview
 
+## The short version
+
+- **This always runs. No worth-it test** — they already got the interview, which is the scarce thing.
+- ⚠️ **Don't lead with how long it takes.** An evening is comfortable, a couple of hours is enough, and ideally it runs the day before.
+- **Start from what was actually *sent*, not the profile.** Those drift apart by design, and the interviewer is holding the sent version.
+- ⛔ **Never coach someone into contradicting their own page.** Coach the version that contains both facts and leaves the page looking conservative.
+- ⛔ **Never edit a submitted document.** It's a frozen record of what went out.
+- **Every number on the page needs a sentence they can say out loud**, including honest attribution for anything unmeasured.
+- **A recorded gap is a statement about the profile, not about the person.** On any posting that skipped a deep dive, re-ask every one — the recoveries are consistently large.
+- **Diff the resume against the person, not just against the posting.** *"Your title says X, why are you applying for Y"* is near-certain and appears on no list.
+- **Two banks, different jobs:** stories fix the facts so nothing gets assembled under pressure; questions make sure no *type* of question is attempted for the first time in the room.
+- **Cover logistics** — money, timing, notice, motive. No document carries any of it, so nothing earlier in the loop ever had a reason to ask.
+- **Run the mock.** It's the only part that tests delivery, and the first part people cut.
+
+Everything below is the phases, the protocols, and the failure modes that produced those rules. Read the whole file when you're running this skill.
+
 ## Purpose
 
 Get someone ready to be asked about their own resume by a person holding it.

@@ -45,7 +45,29 @@ It deliberately does *not* walk the filesystem. Anyone actually using this repo 
 2. **Patterns** — shapes rather than names: absolute `/Users/…` paths, real email addresses, real phone numbers. These catch leaks that were never on anyone's list. Values that are obviously reserved-for-documentation (`@example.com`, `555` numbers) are excluded per *value*, not per line — a real number sitting on the same line as a placeholder still fails. Money figures only warn, since the fixtures carry invented ones on purpose and a real one looks identical.
 3. **Proper-noun sweep** — capitalized multi-word tokens in `skills/`, `docs/`, `templates/`, and the root docs that aren't on the fixture allowlist. Warns only. `examples/` is deliberately excluded; it's a reviewed set of invented names and sweeping it buries the signal. **This is the pass that catches an employer name nobody thought to add**, which is the exact failure described below.
 
-There's a **`.git/hooks/pre-push`** that runs the check and blocks the push if it fails. Hooks aren't cloned, so nobody who forks the repo inherits it. Reinstall it if you ever re-clone — the file is small and the failure mode of not having it is silent.
+### Enabling the pre-push hook
+
+The hook ships in the repo, at [`.githooks/pre-push`](.githooks/pre-push). Git never clones hooks — a repository that could install executable code on clone would be a security hole — so point git at the tracked copy once per clone:
+
+```bash
+git config core.hooksPath .githooks
+```
+
+That setting lives in `.git/config`, which means **it has to be redone on every fresh clone**, and the failure mode of forgetting is silent. The file itself now survives a re-clone, which is the part that used to be missing: the instruction to "reinstall it" had nothing to reinstall from.
+
+It blocks a push on exit 1, and lets one through with a notice on exit 2 (no `scrub-terms.txt`) — a contributor who forked this repo has no denylist, can't have one, and has nothing of yours to leak.
+
+### Checking history
+
+The passes above only see the current publishable set. **Scrubbing a file today does not unpublish what was committed yesterday**, and a leak found and fixed in the working tree leaves the check green with the data still in the history.
+
+```bash
+./scripts/scrub-check.sh --history
+```
+
+Runs the denylist and pattern passes over every commit reachable from `HEAD`. The proper-noun sweep is skipped there — across all of history it returns thousands of tokens dominated by prose that's since been rewritten, which buries the signal.
+
+Worth running before any port and once after a stretch of pushing. ⛔ **A hit in history cannot be fixed by editing a file.** It needs the history rewritten (`git filter-repo`) and a force-push, and anyone who already cloned still has it. Treat it as an incident, not a chore.
 
 If it comes back with hits, look at each one. Fix real leaks. If something is a genuine false positive, **narrow the term** (add `=` for whole-word matching, or make it more specific) or move it below the `=== WARN ===` line — don't delete it and don't loosen the check to make it quiet.
 
