@@ -25,6 +25,7 @@ One markdown playbook per capability. Plain files any agent can read — nothing
 | [`maintain-profile.md`](maintain-profile.md) | A new fact, a better phrasing, or a correction — **never mid-application** | Updated `profile/` files |
 | [`run-a-deep-dive.md`](run-a-deep-dive.md) | The posting they want most, whatever the reason | A tailored application, and a much larger `profile/` |
 | [`build-a-tracker.md`](build-a-tracker.md) | They want to see every application in one table — usually past six of them | `status.md` per folder, plus an Obsidian Base or a plain table |
+| [`update-this-repo.md`](update-this-repo.md) | They ask to update, or their `VERSION` is behind and it matters | Current system files, their data untouched, and a plain summary of what changed |
 
 ## The usual order
 

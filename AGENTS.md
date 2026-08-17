@@ -48,6 +48,10 @@ Then adjust: produce complete file contents rather than diffs, always name the e
 
 **If they seem new and haven't been offered one, offer the tour.** [`docs/walkthrough.md`](docs/walkthrough.md) to read, or [`skills/run-the-walkthrough.md`](skills/run-the-walkthrough.md) to be led through. Offer once, take no for an answer.
 
+**Know which version this copy is.** [`VERSION`](VERSION) holds it; [`CHANGELOG.md`](CHANGELOG.md) says what each one changed. Read `VERSION` on a first run and mention it once, in a clause — a stale copy is otherwise invisible, including to them, and it's the first thing worth knowing when something behaves oddly. **No `VERSION` file means the copy predates versioning**, which is older than 2026.08.16.
+
+Anything about updating — "update this", "am I on the latest", "is there a newer version" — goes to [`skills/update-this-repo.md`](skills/update-this-repo.md). ⛔ **Never update on your own initiative**, and never touch their data folders while doing it.
+
 ---
 
 ## First run

@@ -11,6 +11,7 @@ You'll keep using your own private career vault, and this repo is a sanitized fo
 3. **Check it against the denylist** (below) before it goes anywhere near a commit.
 4. **Update `examples/jordan-vale/`** if the change affects behavior a new user would actually see — a new skill, a changed template shape, a different default. The example should stay a faithful demonstration of the current system, not a snapshot of an old one.
 5. **Commit, with a message that describes the capability, not the personal context it came from.**
+6. **Bump [`VERSION`](VERSION) and add a [`CHANGELOG.md`](CHANGELOG.md) entry** if the change alters behaviour a user would notice. Versions are dates (`2026.08.16`), one per shipping day rather than per commit. Write the entry for the person using this — what changes for them, and whether it affects work they've already done. A fix nobody can tell they need is a fix that doesn't get pulled.
 
 ### Don't let the cost become the headline
 
@@ -28,11 +29,17 @@ So: state the cost honestly, keep it accurate, and don't put it where the purpos
 
 ## Running the scrub check
 
-`scripts/scrub-check.sh` makes three passes, in decreasing order of certainty. Both it and `scrub-terms.txt` are gitignored — a list of exactly what to avoid saying is itself sensitive.
+`scripts/scrub-check.sh` makes three passes, in decreasing order of certainty. `scrub-terms.txt` is gitignored — a list of exactly what to avoid saying is itself sensitive. The script is tracked, and excluded from its own scan.
 
 ```bash
 ./scripts/scrub-check.sh
 ```
+
+**What it scans is the publishable set, not the working tree** — tracked files plus untracked files that aren't ignored, straight from `git ls-files`. That's exactly what a push can carry, and untracked-but-not-ignored counts because a new file is one `git add .` away from being published.
+
+It deliberately does *not* walk the filesystem. Anyone actually using this repo has their real career history in `profile/` and `applications/` — gitignored, unpublishable, and full of the employer names, home paths and phone numbers these passes hunt for. Walking the tree meant the check hard-failed on every run with nothing staged and nothing to leak, then instructed the person to delete their own data. A check that fails when nothing is wrong stops being read, which is the failure this script exists to prevent.
+
+⚠️ **It has no view of git history.** Scrubbing a file today does not unpublish what was committed yesterday. A leak found here and fixed here leaves the check green and the data in the history permanently.
 
 1. **Denylist** — every term in `scrub-terms.txt`. Terms above the `=== WARN ===` line fail the run; terms below it only warn, because they're real *and* ordinary English. A term prefixed with `=` matches whole words only, which is what stops a short company name from firing on every word that happens to contain it.
 2. **Patterns** — shapes rather than names: absolute `/Users/…` paths, real email addresses, real phone numbers. These catch leaks that were never on anyone's list. Values that are obviously reserved-for-documentation (`@example.com`, `555` numbers) are excluded per *value*, not per line — a real number sitting on the same line as a placeholder still fails. Money figures only warn, since the fixtures carry invented ones on purpose and a real one looks identical.
