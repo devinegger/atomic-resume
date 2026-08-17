@@ -10,6 +10,18 @@ To update, see [`HELP.md`](HELP.md) → *…update my copy?*, or just tell your 
 
 ---
 
+## 2026.08.18
+
+### Moving an older downloaded copy onto updates
+
+If you downloaded this as a ZIP — which is what setup recommended for months — the instructions for getting onto updates had a hole in them. Copying your folders into a fresh copy also copies that version's *shipped* files over the new ones: the `README.md` in each data folder, and all four resume and cover-letter templates. Seven files, rolled back to whatever version you had, with nothing announcing it. A resume would then get built from an old template.
+
+`HELP.md` and the update process now cover it, and the recovery if you already did it is one command — provided you're on a clone. Migrating to one takes five minutes and is the last time any of this has to be done by hand.
+
+Your career data was never at risk in any of this. It's the shipped files that were.
+
+---
+
 ## 2026.08.17
 
 Mostly maintainer-side hardening. One change you might notice.

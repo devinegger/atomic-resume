@@ -140,7 +140,19 @@ Tell your agent **"update this repo."** That's the whole thing — it works out 
 
 **Am I out of date?** Your version is in [`VERSION`](VERSION). Compare it to the top entry in [`CHANGELOG.md`](CHANGELOG.md). No `VERSION` file at all means your copy is from before this existed, and there's a fair bit worth having.
 
-**By hand, if you cloned it:** `git pull` in the folder. **If you downloaded a ZIP:** there's no one-command version — download a fresh one, unzip it beside the old folder, move your four data folders across, then delete the old one. Copy out anything you edited yourself first; that part doesn't survive. The agent will walk you through it.
+**By hand, if you cloned it:** `git pull` in the folder.
+
+**If you downloaded a ZIP**, there's no one-command version, and it's worth spending five minutes to make sure there never has to be one again:
+
+```bash
+git clone https://github.com/devinegger/atomic-resume.git atomic-resume-new
+```
+
+Then open the new folder with your agent and say: *"I'm migrating from an older downloaded copy at `<path>`. Read `skills/update-this-repo.md` and move my data across."* Check your material is all there, then delete the old folder. Every update after that is one command.
+
+⚠️ **Don't do the copying by hand unless you follow the skill exactly.** Your old folder contains that version's *shipped* files as well as your own — a `README.md` in each data folder, and the four templates. Copying the folders across overwrites the new ones with old copies, including rolling all four resume templates back, and nothing tells you it happened. The recovery is one command, but only if you're using a clone. Let the agent do it.
+
+**If you'd rather not use git at all**, that's a complete answer — re-download the ZIP each time, copy only *your own* files across (not the `README.md` in each folder, not the shipped templates), and expect to do it again next update.
 
 ### …stop for now?
 
