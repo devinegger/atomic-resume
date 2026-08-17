@@ -18,9 +18,17 @@ Three steps, about fifteen minutes. Each one ends with something you can check, 
 
 ### 1. Get the folder
 
-Click the green **Code** button at the top of this repo's page, choose **Download ZIP**, and unzip it. You'll get a folder called `atomic-resume`. Put it somewhere you'll find it again — Documents is fine.
+Open a terminal, move to wherever you keep things — Documents is fine — and run:
 
-If you use git, `git clone` it instead. It makes no difference to anything below.
+```bash
+git clone https://github.com/devinegger/atomic-resume.git
+```
+
+You'll get a folder called `atomic-resume`.
+
+**Why this rather than the download button:** it's the only version that can be updated later. Fixes ship here regularly, and `git clone` means getting them is one command that leaves everything you've written untouched. You don't need to know anything about git for this — it's one line now and one line later.
+
+**If that command doesn't work** (no git installed, or you'd rather not), use the green **Code** button → **Download ZIP** → unzip. Everything works identically. Updating is just more manual — see [`CHANGELOG.md`](CHANGELOG.md) and [`HELP.md`](HELP.md) → *…update my copy?*.
 
 > **Check:** the folder exists and contains `README.md`, `AGENTS.md`, and folders named `profile`, `templates`, and `skills`.
 
@@ -167,6 +175,16 @@ The templates in this repo look plain on purpose, and it's worth understanding w
 **And when none of it applies:** if you're handing a resume straight to a person — someone you met, an internal referral, a small company with an email address — there's no parser in the loop and none of this constrains you. The agent can build you a more designed version for that situation; see the *bring your own template* option below.
 
 More detail in [`docs/ats-notes.md`](docs/ats-notes.md).
+
+## Keeping it up to date
+
+Your copy's version is in [`VERSION`](VERSION). Compare it to the top of [`CHANGELOG.md`](CHANGELOG.md) — if they match, you're current.
+
+To update, tell your agent **"update this repo."** It'll work out which kind of copy you have, bring the system files current, and tell you what changed in terms of what it means for you.
+
+**Your career data is never touched by an update.** `_inbox/`, `profile/`, `applications/` and `output/` are yours; git is configured to ignore them entirely, so an update physically cannot overwrite them.
+
+If you'd rather do it by hand: `git pull` in the folder, if you cloned it.
 
 ## The truthfulness contract
 

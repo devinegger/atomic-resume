@@ -14,8 +14,25 @@
 #                   employer name nobody thought to add to the denylist, which
 #                   is exactly how the 2026-07-31 list went stale.
 #
-# Both this script and scrub-terms.txt are gitignored — a list of precisely
-# what not to say is itself sensitive.
+# scrub-terms.txt is gitignored — a list of precisely what not to say is
+# itself sensitive. This script is tracked, and excluded from its own scan.
+#
+# ─── What gets scanned ───────────────────────────────────────────────
+#
+# The publishable set, from git: tracked files plus untracked files that
+# aren't ignored. That is exactly what a push can carry.
+#
+# It deliberately does NOT scan the working tree. Anyone actually using
+# this repo has their real career history sitting in profile/ and
+# applications/ — gitignored, unpublishable, and full of the employer
+# names, home paths and phone numbers these passes hunt for. Walking the
+# filesystem meant the check failed on every run with nothing staged and
+# nothing to leak, and told the person to delete their own data. A check
+# that fails when nothing is wrong stops being read, which is the failure
+# this whole script exists to prevent.
+#
+# Untracked-but-not-ignored files count, because a new file that hasn't
+# been `git add`ed yet is one `git add .` from being published.
 #
 # Usage: ./scripts/scrub-check.sh
 # Exit 0 = clean (warnings may still print). Exit 1 = something must be fixed.
@@ -28,14 +45,30 @@ TERMS_FILE="scrub-terms.txt"
 FAILED=0
 WARNED=0
 
-EXCLUDES=(
-  --exclude-dir=.git
-  --exclude-dir=node_modules
-  --exclude-dir=.obsidian
-  --exclude="$TERMS_FILE"
-  --exclude="scrub-check.sh"
-  --exclude="EXTRACTION-PLAN.md"
-)
+if ! git rev-parse --git-dir >/dev/null 2>&1; then
+  echo "Not a git repository. This check scans what git would publish," >&2
+  echo "so it has nothing to work from here." >&2
+  exit 1
+fi
+
+# The publishable set, NUL-delimited. Filenames in this repo contain spaces
+# (the rendered example documents), so nothing here may split on whitespace.
+# scrub-check.sh excludes itself; scrub-terms.txt and EXTRACTION-PLAN.md are
+# gitignored and so are already absent.
+publishable() {
+  git ls-files -z --cached --others --exclude-standard \
+    -- ':!scripts/scrub-check.sh' 2>/dev/null
+}
+
+# grep across that set.
+#
+# -H because xargs batches: if the final batch happens to hold one file,
+# grep would print matches with no filename and the hit would be unlocatable.
+# -I skips binaries. Trailing `|| true` because grep exits 1 on no match and
+# xargs turns that into 123, neither of which is an error here.
+scan() {
+  publishable | xargs -0 grep -HnI "$@" 2>/dev/null || true
+}
 
 hr() { printf '─%.0s' {1..70}; echo; }
 
@@ -69,8 +102,7 @@ while IFS= read -r line || [[ -n "$line" ]]; do
     WORDMATCH="-w"
   fi
 
-  MATCHES=$(grep -rIn --fixed-strings --ignore-case $WORDMATCH \
-    "${EXCLUDES[@]}" -- "$term" . 2>/dev/null)
+  MATCHES=$(scan --fixed-strings --ignore-case $WORDMATCH -- "$term")
 
   if [[ -n "$MATCHES" ]]; then
     BLOCK="── \"$term\" ──
@@ -118,7 +150,7 @@ for entry in "${PATTERNS[@]}"; do
   # the matched value alone. Filtering whole lines instead would let a real
   # phone number ride along on a line that also contained a 555 placeholder —
   # which is exactly what the first version of this script did.
-  MATCHES=$(grep -rInoE "${EXCLUDES[@]}" -- "$regex" . 2>/dev/null)
+  MATCHES=$(scan -oE -- "$regex")
   if [[ -n "$exclude" && -n "$MATCHES" ]]; then
     MATCHES=$(printf '%s\n' "$MATCHES" \
       | awk -F: -v ex="$exclude" '{ v=$0; sub(/^[^:]*:[0-9]+:/,"",v); if (v !~ ex) print }')
@@ -156,8 +188,13 @@ fi
 # port, which is exactly where an unlisted real employer name would land.
 ALLOW='^(Jordan Vale|Copperline Health|Northwind Logistics|Brightline Outfitters|Lakeshore State University|Care Access|Claude Code|Claude Desktop|Google Docs|Google Drive|VS Code|Visual Studio|Microsoft Word|Applicant Tracking|Atomic Resume|Open Folder|Download ZIP|Career Highlights|Not Extracted|Key Skills|Work Experience|Print Preview|Page Setup|Background Graphics|Read Me|Getting Started|New Vault|Command Line|Terminal App|The Agent|The Person|This Repo|Your Career|United States|New York|San Francisco|FULL NAME|JOB TITLE|MONTH YEAR|ISSUING BODY|FICTIONAL EXAMPLE|COMPANY NAME|SCHOOL NAME)$'
 
-PROPER=$(grep -rIhoE '\b[A-Z][a-zA-Z0-9]+(\s+[A-Z][a-zA-Z0-9]+)+\b' \
-  "${EXCLUDES[@]}" -- skills/ docs/ templates/ ./*.md 2>/dev/null \
+# Same publishable set as the other passes, narrowed to the prose directories.
+# The pathspecs run inside git rather than as a grep filter, so examples/ is
+# excluded before anything is read.
+PROPER=$(git ls-files -z --cached --others --exclude-standard \
+    -- 'skills/*' 'docs/*' 'templates/*' '*.md' \
+       ':!examples/*' ':!scripts/scrub-check.sh' 2>/dev/null \
+  | xargs -0 grep -hoIE '\b[A-Z][a-zA-Z0-9]+(\s+[A-Z][a-zA-Z0-9]+)+\b' 2>/dev/null \
   | sed 's/[[:space:]]\+/ /g' \
   | grep -vE "$ALLOW" \
   | sort | uniq -c | sort -rn)

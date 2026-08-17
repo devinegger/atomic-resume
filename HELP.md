@@ -132,6 +132,16 @@ Once you've got more than about six going, ask for a tracker — *"build me a tr
 
 One caveat it'll tell you too: **a tracker doesn't update itself.** It stays current because the agent updates it when you say what happened. If that lapses it doesn't go blank, it goes quietly wrong — and it still looks authoritative. The logs in each folder remain the real record.
 
+### …update my copy?
+
+Tell your agent **"update this repo."** That's the whole thing — it works out whether you cloned or downloaded, brings the system files current, and tells you what changed and whether it affects anything you've already sent.
+
+**Your career data is never touched.** `_inbox/`, `profile/`, `applications/` and `output/` are excluded from the update by design, so it can't overwrite anything you've written.
+
+**Am I out of date?** Your version is in [`VERSION`](VERSION). Compare it to the top entry in [`CHANGELOG.md`](CHANGELOG.md). No `VERSION` file at all means your copy is from before this existed, and there's a fair bit worth having.
+
+**By hand, if you cloned it:** `git pull` in the folder. **If you downloaded a ZIP:** there's no one-command version — download a fresh one, unzip it beside the old folder, move your four data folders across, then delete the old one. Copy out anything you edited yourself first; that part doesn't survive. The agent will walk you through it.
+
 ### …stop for now?
 
 Just stop. Everything's written to files as you go. Come back whenever and say what you were doing.
