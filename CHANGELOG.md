@@ -10,6 +10,20 @@ To update, see [`HELP.md`](HELP.md) → *…update my copy?*, or just tell your 
 
 ---
 
+## 2026.08.17
+
+Mostly maintainer-side hardening. One change you might notice.
+
+### The agent should hold the rules better in long sessions
+
+There are getting on for 3,700 lines of instruction behind this system, and nothing told the agent how much of it to read at once. Reading too little means improvising a procedure that already exists; reading all of it at once means the specific rules blur together and stop binding. `AGENTS.md` now says which files are always read, and that skills get read one at a time at the point they fire rather than all up front.
+
+The four longest skills — interview prep, the tracker, atom extraction, the deep dive — now open with a short block of their load-bearing rules, so a partial read still produces correct behaviour rather than a plausible-sounding improvisation.
+
+Nothing about what the system does changed. It should just be more consistent about doing it.
+
+---
+
 ## 2026.08.16
 
 The first update since the initial release. Everything below has been shipping wrong, or not shipping at all, for anyone who downloaded before today.

@@ -58,3 +58,9 @@ analyze-job-posting → match-atoms-to-posting → choose-document-format
 Same shape as the existing ones — YAML frontmatter with `name`, `description`, `inputs`, `outputs`, then purpose → when to invoke → procedure → questions to ask → done looks like → common failure modes.
 
 The failure-modes section is the most useful part of these files and the easiest to skip. Write it from what actually went wrong, not from what might.
+
+**Past about two hundred lines, open with `## The short version`** — the load-bearing rules, enough to behave correctly if that's all anybody reads. Four skills have one. The rest are already about that long and don't need one.
+
+Two things to hold when writing it. It is **not a summary**: leave out anything that isn't a rule, and don't soften a `⛔` into a suggestion on the way up. And it is **derived**, so when a rule below it changes, the short version changes in the same edit — a summary that drifts from its own file is worse than no summary, because it's the part that gets read.
+
+**Watch the total.** `wc -l AGENTS.md skills/*.md` is about 3,700 lines. There's no hard budget, but a number nobody looks at is a number that only goes up, and a skill nobody finishes reading is indistinguishable from one that isn't there.

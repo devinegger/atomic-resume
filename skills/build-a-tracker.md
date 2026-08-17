@@ -7,6 +7,18 @@ outputs: status.md in each application folder, and either pipeline.base (Obsidia
 
 # Build an application tracker
 
+## The short version
+
+- ⛔ **Don't build one unprompted.** Below about six applications the summary in `track-applications.md` is faster than any table.
+- **State the maintenance obligation before building anything.** It doesn't update itself, and a neglected tracker doesn't go blank — it goes quietly wrong while still looking authoritative, and nobody double-checks a table.
+- **Three things get decided per person:** whether they use Obsidian at all, what they'd actually filter on, and whether they want that obligation.
+- **Add a `status.md` per application folder**, backfilled from the logs. ⛔ **Leave a field empty where the record is silent — never guess**, and say which ones you couldn't fill.
+- **`log.md` says what happened; `status.md` says where it stands.** The log stays append-only prose.
+- **Then build one of two things:** an Obsidian Base, or a plain table regenerated on request.
+- **Updating it is part of logging** — same moment, same conversation, not a separate chore.
+
+Everything below is the trade to state out loud, the field definitions, and the Base syntax. Read the whole file when you're running this skill.
+
 ## Purpose
 
 Answer "where does everything stand?" at a glance, instead of by opening nine folders.

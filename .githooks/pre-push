@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+# Blocks a push if the publish-safety check fails.
+#
+# Git does not clone hooks, and it never will — a repo that could install
+# executable code on clone would be a security hole. So this file ships in the
+# repo where it survives a re-clone, and you point git at it once:
+#
+#     git config core.hooksPath .githooks
+#
+# That setting is per-clone and lives in .git/config, so it has to be redone on
+# every fresh clone. MAINTAINING.md says so next to the porting steps.
+#
+# Exit codes from scrub-check.sh:
+#   0  clean, or warnings only        → push proceeds
+#   2  no scrub-terms.txt configured  → push proceeds, with a notice
+#   1  something must be fixed        → push blocked
+
+set -uo pipefail
+
+HERE="$(cd "$(dirname "$0")" && pwd)"
+CHECK="$HERE/../scripts/scrub-check.sh"
+
+if [[ ! -x "$CHECK" ]]; then
+  echo "pre-push: $CHECK is missing or not executable — skipping the scrub check." >&2
+  echo "pre-push: that means this push is unchecked. Worth fixing." >&2
+  exit 0
+fi
+
+"$CHECK"
+STATUS=$?
+
+case $STATUS in
+  0)
+    exit 0
+    ;;
+  2)
+    # A contributor who forked this repo has no denylist and never will —
+    # it's gitignored. Blocking their push would make the fork unusable, and
+    # they have nothing of the maintainer's to leak in the first place.
+    echo >&2
+    echo "pre-push: no scrub-terms.txt, so the denylist pass did not run." >&2
+    echo "pre-push: allowing the push. If you are the maintainer, this is wrong" >&2
+    echo "pre-push: — see MAINTAINING.md → 'Keeping the denylist current'." >&2
+    exit 0
+    ;;
+  *)
+    echo >&2
+    echo "pre-push: BLOCKED. The publish-safety check failed — see above." >&2
+    echo "pre-push: fix the hits, or re-run ./scripts/scrub-check.sh to see them again." >&2
+    echo >&2
+    echo "pre-push: if you are certain this is a false positive, push with" >&2
+    echo "pre-push:   git push --no-verify" >&2
+    echo "pre-push: and then go narrow the term, because the next push will" >&2
+    echo "pre-push: hit the same thing." >&2
+    exit 1
+    ;;
+esac

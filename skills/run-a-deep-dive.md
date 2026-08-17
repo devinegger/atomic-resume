@@ -7,6 +7,20 @@ outputs: A tailored application, and — the actual point — a substantially la
 
 # Run a deep dive
 
+## The short version
+
+- **The signal is the posting they want most, whatever the reason.** Not the widest profile gap — that on its own is a long shot, and a long shot doesn't earn a day.
+- **A modifier on the normal loop, not a replacement.** Every skill in the sequence still runs; each stage just gets more attention.
+- ⛔ **Never on your own initiative, and never for volume.** It's a day of *their* attention. Propose it, explain the trade, let them decide.
+- ⚠️ **Scope it before starting or it overruns.** Agree either several sittings or the posting's top three or four lines.
+- **This is the one session where new atoms are written during an application.** What licenses that is the person being present for every fact, sourcing it slowly themselves.
+- ⛔ **The licence is revoked the moment the pace picks up.** Batching questions or hurrying toward the document puts the normal defer-it rule back in force. Speed is the hazard.
+- **One posting line at a time**, following up until an answer couldn't be misread — including saying *"that's still ambiguous"* to an answer given in good faith.
+- **Name every inference as an inference.** It started as a truth guard and turns out to be the best elicitation technique here.
+- **Read the employer's other postings, and verify claims about the employer** as carefully as claims about the candidate.
+
+Everything below is the argument, the interview protocol, and the failure modes. Read the whole file when you're running this skill.
+
 ## Purpose
 
 Give the job they want most everything it's worth, and come out with a much bigger profile either way.

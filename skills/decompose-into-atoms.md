@@ -7,6 +7,18 @@ outputs: Tagged, sourced, deduplicated atoms in profile/achievements.md, plus a 
 
 # Decompose source material into atoms
 
+## The short version
+
+- **One atom, one fact.** Verb first, lands on what changed. Every atom records where the evidence for it lives.
+- ⛔ **Never invent, upgrade, or round a number.** If nobody measured it, the atom says `Unmeasured`, and that is a complete answer rather than a gap.
+- **Duties are not accomplishments.** "Responsible for" describes a job; what changed because they were there is an atom.
+- **Standard mode is the default.** Material that's activity rather than outcome becomes an atom marked `Status: thin` with the open question attached — not a refusal. Strict mode only when `profile/master.md` says so, never on your own initiative.
+- **Say which mode you're in, once, when you start extracting.**
+- **Ask about outcomes, not about whether something counts.** Old resumes are good at saying what someone did and bad at saying what changed.
+- **The `## Not extracted` ledger is a recovery prompt, not a verdict.**
+
+Everything below is the format, the procedure, and the failure modes that produced those rules. Read the whole file when you're running this skill.
+
 ## Purpose
 
 Turn messy career material into atoms: single-fact, reusable, sourced pieces of evidence. Everything downstream selects from what you produce here, so the quality of the entire system is set in this step.

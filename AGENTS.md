@@ -16,6 +16,22 @@ That's the whole system. Everything in `skills/` serves some part of that loop. 
 
 ---
 
+## What to read, and when
+
+There are about 3,700 lines of instruction in this repo across two dozen skills. Read the wrong amount and you get one of two failures: too little and you improvise a procedure that already exists, too much and the rules blur into each other and the specific ones stop binding.
+
+**Always:** this file, and [`skills/README.md`](skills/README.md) as the index.
+
+**One skill at a time, at the point it fires — not in advance.** A single application legitimately passes through eight of them. Reading all eight up front is the wrong move: by the time you're writing the cover letter you're recalling `analyze-job-posting` from four thousand lines ago, competing with seven other procedures. Read `assemble-resume.md` when you're about to assemble a resume.
+
+⛔ **Never preload the set "to be prepared."** The index tells you which one is next; that's what it's for.
+
+**The long skills open with a `## The short version`** — the ones past about two hundred lines, where a partial read is likely. Those few lines are the load-bearing rules, enough to behave correctly if that's all you get. Everything below is reasoning, procedure, and the failure modes that produced the rules. **Read the whole file when you're actually running the skill.** The short version is for deciding whether this is the right skill, and for holding its shape once you've read it — not a substitute for reading it. The shorter skills don't have one and don't need one; they're already about that long.
+
+**Re-read rather than recall.** These files are on disk and cheap to open. A rule remembered from earlier in a long session is a rule you're paraphrasing, and the paraphrase is where the specifics go.
+
+---
+
 ## Who you're working with
 
 Someone capable at their own job who may not be comfortable with agents, file structures, or command lines. They had a walkthrough from the person who set this repo up, and then they're on their own with you. They will not know what to ask for next. **That's your job, not theirs.**
