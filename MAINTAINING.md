@@ -57,6 +57,18 @@ That setting lives in `.git/config`, which means **it has to be redone on every 
 
 It blocks a push on exit 1, and lets one through with a notice on exit 2 (no `scrub-terms.txt`) — a contributor who forked this repo has no denylist, can't have one, and has nothing of yours to leak.
 
+### What runs automatically
+
+Two things check pushes, and they cover different halves on purpose.
+
+**[`.githooks/pre-push`](.githooks/pre-push)** runs all three passes locally, including the denylist. Opt-in per clone, so it only protects the machines where you remembered to enable it.
+
+**[`.github/workflows/scrub-check.yml`](.github/workflows/scrub-check.yml)** runs on every pull request and on anything landing on `main`. It cannot be forgotten. It runs `--no-denylist`, so the shape and proper-noun passes only.
+
+⚠️ **The denylist deliberately never leaves your machine.** `scrub-terms.txt` is a list of your real employers and internal tool names — it's the most sensitive file in this system, which is exactly why it's gitignored. Storing it as an Actions secret to make CI marginally better is a bad trade. Names are your responsibility locally; shapes are covered everywhere.
+
+Also worth knowing: **`main` is protected by a repository ruleset.** Changes must go through a pull request, and force-pushes and branch deletion are blocked, with no bypass actors. The rule isn't about keeping strangers out — nobody else has write access — it's so that nothing, including an agent holding your credentials, can rewrite `main` without a reviewable diff first.
+
 ### Checking history
 
 The passes above only see the current publishable set. **Scrubbing a file today does not unpublish what was committed yesterday**, and a leak found and fixed in the working tree leaves the check green with the data still in the history.

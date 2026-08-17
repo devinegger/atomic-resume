@@ -1,0 +1,40 @@
+name: Publish safety
+
+# Runs the publish-safety check on every pull request and on anything that
+# lands on main.
+#
+# Why this exists alongside .githooks/pre-push: the hook only runs if someone
+# typed `git config core.hooksPath .githooks` in that particular clone. Push
+# from a second machine, or let an agent push, and nothing checks. This can't
+# be forgotten.
+#
+# ⚠️ The denylist pass does NOT run here, deliberately. scrub-terms.txt is a
+# list of real employers and internal tool names — it is gitignored on purpose,
+# and storing it as an Actions secret to make this check marginally better is a
+# bad trade. Names are checked locally by the hook; shapes are checked here.
+#
+# What that leaves is still the useful half: absolute home paths, real email
+# addresses and real phone numbers are exactly the leaks a human reading a diff
+# scrolls straight past.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  scrub:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run the shape and proper-noun passes
+        run: ./scripts/scrub-check.sh --no-denylist
+
+      - name: Remind that names were not checked
+        if: success()
+        run: |
+          echo "::notice::Shape and proper-noun passes ran. The denylist pass did not — names are checked locally by .githooks/pre-push. See MAINTAINING.md."

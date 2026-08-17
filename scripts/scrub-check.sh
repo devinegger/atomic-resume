@@ -36,14 +36,21 @@
 #
 # ─── Usage ───────────────────────────────────────────────────────────
 #
-#   ./scripts/scrub-check.sh              the publishable set (default)
-#   ./scripts/scrub-check.sh --history    every commit reachable from HEAD
+#   ./scripts/scrub-check.sh                 the publishable set (default)
+#   ./scripts/scrub-check.sh --history       every commit reachable from HEAD
+#   ./scripts/scrub-check.sh --no-denylist   skip pass 1; run passes 2 and 3
+#
+# --no-denylist exists for CI. scrub-terms.txt is a list of real employers and
+# internal tool names, gitignored on purpose, and not worth uploading to a CI
+# provider to make a check marginally better. Pass 1 stays on the maintainer's
+# machine; the shape and proper-noun passes run everywhere, and those are the
+# ones that catch what a human reading a diff would miss.
 #
 # Exit 0 = clean (warnings may still print).
 # Exit 1 = something must be fixed.
-# Exit 2 = not configured (no scrub-terms.txt). The hook lets this through
-#          with a warning, because a contributor who forked this repo has no
-#          denylist and shouldn't be blocked from pushing.
+# Exit 2 = not configured (no scrub-terms.txt, and --no-denylist not passed).
+#          The hook lets this through with a warning, because a contributor who
+#          forked this repo has no denylist and shouldn't be blocked.
 
 set -uo pipefail
 
@@ -54,10 +61,13 @@ FAILED=0
 WARNED=0
 MODE="working"
 
+NO_DENYLIST=0
+
 for arg in "$@"; do
   case "$arg" in
     --history) MODE="history" ;;
-    -h|--help) sed -n '2,46p' "$0" | sed 's/^# \{0,1\}//'; exit 0 ;;
+    --no-denylist) NO_DENYLIST=1 ;;
+    -h|--help) sed -n '2,52p' "$0" | sed 's/^# \{0,1\}//'; exit 0 ;;
     *) echo "Unknown option: $arg" >&2; exit 1 ;;
   esac
 done
@@ -148,7 +158,19 @@ fi
 # Pass 1 — the denylist
 # ─────────────────────────────────────────────────────────────
 
-if [[ ! -f "$TERMS_FILE" ]]; then
+if [[ $NO_DENYLIST -eq 1 ]]; then
+  hr
+  echo "DENYLIST PASS SKIPPED (--no-denylist)"
+  echo
+  echo "Names are not being checked in this run. scrub-terms.txt is a list of"
+  echo "real employers and internal tool names — it is gitignored on purpose"
+  echo "and is not worth uploading anywhere to make a check marginally better."
+  echo "Pass 1 belongs on the maintainer's machine. What runs here are the"
+  echo "shape and proper-noun passes, which catch the leaks a human reading a"
+  echo "diff would miss anyway."
+  hr
+  echo
+elif [[ ! -f "$TERMS_FILE" ]]; then
   echo "No $TERMS_FILE found. Nothing to check against." >&2
   echo "See MAINTAINING.md → 'Keeping the denylist current'." >&2
   exit 2
@@ -157,6 +179,11 @@ fi
 SECTION="fail"
 DENY_FAIL_OUT=""
 DENY_WARN_OUT=""
+
+# Reading from /dev/null when the pass is skipped keeps one code path rather
+# than a second copy of the loop guarded by a flag.
+DENY_INPUT="$TERMS_FILE"
+[[ $NO_DENYLIST -eq 1 ]] && DENY_INPUT="/dev/null"
 
 while IFS= read -r line || [[ -n "$line" ]]; do
   # The WARN marker switches severity for everything after it.
@@ -186,7 +213,7 @@ $MATCHES
       DENY_WARN_OUT+="$BLOCK"
     fi
   fi
-done < "$TERMS_FILE"
+done < "$DENY_INPUT"
 
 if [[ -n "$DENY_FAIL_OUT" ]]; then
   hr; echo "DENYLIST HITS — these must be fixed"; hr
